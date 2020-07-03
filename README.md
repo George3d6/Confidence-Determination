@@ -1,20 +1,42 @@
 # On confidence determination
 
-## Problem
+## 1. What is confidence
 
-Let's define confidence as the chance of a prediction coming true, such that, given an infinite number of exact predictions all with confidence `c` we would expect their overall accuracy to be equal to `c`.
+I'm somewhat partial towards the skeptic philosophical tradition, that means I ascribe to the idea that one can't be truly confident about anything.
 
-With that out of the way, does confidence have any role to play in machine learning ?
+The definition of "confidence" is among those things I'm not very confident about.
+
+The commonly accepted definition for confidence, by which I mean the first line of text that pops up when I google "confidence", is:
+
+> The feeling or belief that one can have faith in or rely on someone or something
+
+This is not very helpful, you know that a concept is fuzzy when "feeling", "faith" and "belief" must all be used to describe it, all that's missing to make the complete list of hand wavy terms we use to describe something we don't understand is: quantum, consciousness and intuition.
+
+In an ideal world where I can measure the outcome of an infinity of binary events I can define ideal confidence as:
+
+> The probability of an event coming true, such that given an infinite number of potential events, each with a confidence from 0 to 1 assigned to them, the mean of the confidences will be equal to the fraction of events that came true.
+
+But I'm pretty sure that this ideal world contains an ideal analytic philosopher with a panache for set theory that would have some complaint about my use of infinity which breaks even that definition.
+
+I'm fairly sure there is a horrible middle ground between these two definition that relies on the well known fact that [everything in the world is a normal distribution](https://blog.cerebralab.com/Named_Distributions_as_Artifacts) and is thus able to give a definition that is more complex and equaly impractical.
+
+At any rate, we don't live in an ideal world and I don't need an ideal confidence. I just need a number that goes from 0 to 1, describing the approximate probability of something being true, such that if the number is 0.(9) and the thing coming true is "This pill will not kill you", I can confidently swallow that pill every day of the year without giving it much thought... or something like that.
+
+Even more generally, confidence should be a value that allows me to pick a subset of predictions with average confidence `x` and be fairly certain that the average accuracy of those predictions will be about equal to `x`.
+
+But, the exact definition I want for my confidence depends on the problem I'm using it to solve.
+
+## 2. The role of confidence in Machine Learning
+
+Does confidence have any role to play in machine learning ?
 
 Are confidence determination models useful ? If so, how and why ?
 
 Is confidence a useful tool in our ontology at all or should we eat it up inside some other more useful concept ?
 
-### The role of confidence
-
 I think confidence as defined above can be though of as playing several roles.
 
-#### 1. A factor by which we weight our predictions *(without modifying the model)*.
+### a) A value by which we weight our predictions *(without modifying the model)*.
 
 Suppose we have a unfiorm target with 3 values: A, B, C. In the case of B and C the "cost" of a false positive is equal to the cost of a true positive, however the "cost" of classifying something as A incorrectly is so great that it's equal to the benefit of x10 correct classifications of A. There's two ways to go about solving this issue:
 
@@ -34,9 +56,9 @@ The confidence based approach seems superior since:
 * It allows us to predict unknowns. If we bias the loss function we are still misclassifying A as B or C in order to avoid the large cost of a FP for A. In the confidence case, if our confidence is too small we can instead just say "I think this is likely and A but I'm not confident enough for it to be worth treating as such".
 
 
-#### 2. Useful in increasing accuracy on tasks where we can make a variable number of predictions
+### b) A value that can increase accuracy on a task where we can refuse to make some predictions
 
-So, quick and dirty example here is obviously stock market. We have a model that predicts `Y` as the change in a stock's price in the next 15 minutes, for any given stock every 15 minutes. We might be making ~8000 predictions with our model, but we only need 2-3 correct predictions coupled with no false predictions to achieve our goal (get silly rich). In this hypothetical we can take only e.g. `Y | c > 0.8`. Thus turning even a bad model into a potentially great model assuming that said model is capable of making a few good predictions and our confidence determination is on point.
+A quick and dirty example here is obviously the stock market. We have a model that predicts `Y` as the change in a stock's price in the next 15 minutes, for any given stock every 15 minutes. We might be making ~8000 predictions with our model, but we only need 2-3 correct predictions coupled with no false predictions to achieve our goal (get silly rich). In this hypothetical we can take only e.g. `Y | c > 0.8`. Thus turning even a bad model into a potentially great model assuming that said model is capable of making a few good predictions and our confidence determination is on point.
 
 *Conversely, not many people can do this, so based on this particular example I think it's fair to speculate something like: "The kind of data that yield very imperfect models are likely to also yield very imperfect confidence determination algorithms and/or have no edge cases where the confidence can be rightfully determined as very high". This is a speculation, not a mathematical or otherwise rigorous stipulation.*
 
@@ -60,7 +82,7 @@ In a case like this a confidence determination mechanism and increase the overal
 This is more or less a generalization of case 1, but I think it's useful to keep both of them in mind since the first one i
 Looking at this generic example this seems fairly promising, since we can basically say "a confidence determination that's better than the overall accuracy score can improve a model past the point where it's overall usefulness scales better with increased accuracy than with the number of predictions it can make".s easier to conceptualize and builds up to this one.
 
-#### 3.Useful as a model training or choosing mechanism
+### c) A value or mechanism for training and choosing model
 
 Supposed we have several models that can make predictions as an ensemble and on their one they have about equal accuracy, or suppose that we want to pick between several models that all obtain around the same accuracy when cross validated on the relevant data.
 
@@ -87,69 +109,72 @@ However, assume that instead of evaluating the accuracy on the validation set we
 
 Thus, if instead of our model picking methodology being "best model on the validation set" it becomes "best model with top 80th percentile accuracy and 80th percentile confidence on the validation set". At least on an intuitive level, this seems like it could prevent overfitting on the validation data.
 
+***
 
-### The roles of confidence are not confidence-specific
+I should note the roles of confidence are not confidence-specific.
 
-In other word, a confidence value can help us:
+From the above I can summarize that a confidence value can help us:
 
 1. Select a subset of predictions with higher accuracies under various scenarios
-2. Modify the behavior of our predictive models both during training and during inference (see point 3)
+2. Modify the behavior of our predictive models both during training and during inference
 
-But a lot of things to do (2) and (1) seems like something that could be inherent in our very models and thus needn't require a complex confidence determination mechanism. Some examples I use in practice are: determining categorical certainty by looking at the non-max values in the one hot output vector, using a quantile loss to determine a confidence range instead of an exact value for numerical predictions, predicting linear instead of binary values in order to determine likelihood of the outcome predicted.
+But a lot of things to do (2) and (1) seems like something that could be inherent in our very models and thus needn't require a complex confidence determination mechanism. Some examples of (1) are: determining categorical certainty by looking at the non-max values in the one hot output vector, using a quantile loss to determine a confidence range instead of an exact value for numerical predictions, predicting linear instead of binary values in order to determine likelihoods for the outcome predicted.
 
-#### Confidence and explainability
+## 3. A detour into confidence and explainability
 
-I'd argue that a confidence determination mechanism can be interesting based on the inputs we feed into it, fundamentally there's 3 different things that can determine confidence.
+I'd argue that a confidence determination mechanism can be interesting based on the inputs we feed into it, there's 3 different things that can determine confidence.
 
-First let's define a few terms, we have some inputs (X), some output which for the sake of argument we can just treat as a label for each input sample (Y) and a machine learning model trying to infer a relationship between the two (M). The predictions of the machine learning model will be denoted `Yh`
+First let's define a few terms, we have inputs (`X`), outputs (`Y`), which for the sake of argument we can just treat as a label for each input sample. We have a machine learning model (`M`) trying to infer a relationship between the two, the predictions of which we will denoted `Yh`
 
-As such, after a prediction is made, confidence can be determine based on 3 variables `X`,`Yh` and `M`.
+As such, after a prediction is made, confidence can be determine based on the values of 3 entities `X`,`Yh` and `M`.
 
-For example, we can take just the inputs into our model and say "Oh, the SNR here looks horrible based on <simple heuristic that's hard to built in into our model>, let's assign this a low confidence".
+Let me give some intuitive examples of how these 3 things can be used to infer confidence:
 
-We can also look at the output and say, "Oh, the model is usually accurate, but currently it's predicted <edge case label> that only appears 2 times in the training data and the model was wrong every time it predicted it, so let's assign a low confidence".
+For example, we can take `X` and say something like: "Oh, the SNR here looks horrible based on <simple heuristic that's hard to built into `M`>, let's assign this a low confidence".
 
-We can also look at the model itself and say, "Oh, the model's activations usually match these clusters of patterns, but the current activations look really weird, this is behavior very different from what we've previously seen, let's assign a low confidence".
+We can also look at `Y` and say something like: "Oh, `M` is usually accurate, but currently `Yh` is an <edge case label> that only appears 2 times in the training data and that `M` was wrong every time it predicted, so let's assign a low confidence".
 
-Granted, both Y and M stem from X, but independently analyzing them might lead to results which are easier to act upon. I.e. "This one pixel on the dog image looks kinda weird" is less useful to say than "The n-th layer of your model has parts x,y,z which activate too strongly due to this random pixel". Both statements are hard to act upon, but at least there's some chance of being able to make meaningful change based on  the second (e.g. use some kind of regularization to normalize whatever is happening in the n-th layer).
+We can also look at `M` itself and say something like: "Oh, the model's activations usually match these clusters of patterns, but the current activations look like outliers, this behavior is very different from what we've previously seen so let's assign a low confidence".
 
-This is all fine and dandy except that, well, there's no way to know which of the two things are easier to 'act upon' in a given scenario, even worst, outside of contrived examples, `X` is usually by far the easiest variable to act upon.
+Granted, both `Y` and `M` stem from `X`, but independently analyzing them might lead to results which are easier to act upon. I.e. "This one pixel on the dog image looks kinda weird" is less useful to say than "The n-th layer of your model has unusually high activations due to this random pixel". Both statements are hard to act upon, but at least there's some chance of being able to make meaningful change based on  the second (e.g. use some kind of regularization to normalize whatever is happening in the n-th layer).
 
-Thus, even though confidence *might* play a role in exaplinability, I think this only comes up in rather contrived scenario when we imagine very complex confidence models that are able to converge spectacularly well. However (see above), I'd tend to think that in most cases, if a confidence model can converge well on a problem, so can a predictive model and thus the confidence/explainability component lose a lot of their usefulness.
+This is all fine and dandy except that, well, there's no way to know which of the two things are "easier to act upon" in a given scenario, outside of contrived examples.
+
+Thus, even though confidence *might* play a role in exaplinability, but the confidence determination mechanism would have to be designed with an explainability component in order for this to happen. It's not obvious that this is easier than just designing `M` itself with exaplinability capabilities built-in. However (see above), I'd tend to think that in most cases, if a confidence model can converge well on a problem, so can a predictive model, thus the confidence/explainability components lose a lot of their usefulness.
 
 
-#### Confidence and training
+## 4. Confidence and training
 
-A more interesting role in confidence determining models would be more them to serve as secondary loss functions to our models.
+A more interesting role of confidence determining models would be for then to serve as secondary cost generators for our models.
 
 Does this seem silly, unintuitive or counter-productive ? Well, consider this:
 
-Given `M` and a confidence determining model `C` that takes `Yh` and produces a confidence `c`, we'll train `M` by using some function that incorporates both `M`'s own loss function and the gradients from the input layer of `C` (in which we input `Yh`).
+Take `M` and a confidence determining model `C` that takes `Yh` and produces a confidence `Yc`. We'll train `M` by using some function that incorporates both `M`'s own loss function and the costs propagated from the input layer of `C` (in which we input `Yh`).
 
-`C` is trained to generate a confidence value, one easy way to do this is to have `C` try to predict a normalized value of the loss of `Yh` based on knowing `X` and `Yh` but not `Y`.
+`C` is trained to generate a confidence value, let's just say `C` is trying to a number from 0 to 1 equal to the numerical value of `Yh == Y` (0 for false and 1 for true).
 
 Sounds a bit strange, but let me propose a different scenario:
 
-What if `C` were to just be discriminating between `Yh` being correct or not, just a 0 and 1 loss, maybe being feed some `Y` values instead at the beginning as to not make it's job too easy.
+What if `C` were to just be discriminating between it's inputs being `Yh` and it's inputs being `Y`, i.e. trying to discriminate between true labels and labels inferred by `M`.
 
 Then, we could backpropagate the cost of this binary decision through `C` and into the output layer of `M`.
 
-What I'm describing is basically just the training methodology for a GAN. Those seem to work stellarly well, so why wouldn't this ?
+What I'm describing is basically just the training methodology for a GAN. Those seem to work stellarly well.
 
-In addition to that, unlike GANs, we have the option of feeding the activation of any of the intermediary layers of `M`, as well as the original input `X`, into `C`. Granted, there's less evidence that this should work, but at least intuitively it seems like it could be an extra useful datapoint.
+In addition to that, unlike GANs, we have the option of feeding the activation of any of the intermediary layers of `M`, as well as `X`, into `C`. Granted, I can't find experimental evidence that this should work, but at least intuitively it seems like it could be an extra useful datapoint.
 
-Well, I can think of several reasons for that, but I'm fairly sure most of them I could also apply to GANs. However, the advantage we have over GANs is that `C` is not working *against* `M` in this case, it's just trying to predict it's behavior. Minimizing the loss for `C` (having it be better able to predict how far `Yh` will be from `Y`) will not necessarily negatively affect `M`'s performance.
+The advantage this has over GANs is that `C` is not working *against* `M`, it's just trying to predict it's behavior. Minimizing the loss for `C` (having it be better able to predict if `Yh == Y`) will not necessarily negatively affect `M`'s performance.
 
-With GANs there is a risk of `G` being actually good, but just facing off against a very well trained `D` that pays close attention to minute features that can't be perfectly replicated by `G` given such a large SNR in the loss function. However, with this approach, there's no incentive or way for `C` behave in ways that increase the loss of `M`.
+With GANs there is a risk of `G` being actually good, but just facing off against a very well trained `D` that pays close attention to minute features that can't be perfectly replicated by `G` given such a large SNR in the loss function. However, with this approach, there's little incentive for `C` to behave in ways that increase the loss of `M`.
 
 On the whole, this is rather promising contextual evidence and good directions to start digging further into this topic with some experimenting.
 
 
-## Experiment
+## 5. Experimental setup
 
 In order to ruminate on the idea of confidence determination I will do the following experiment:
 
-Take a model (M) and train it on 4 datasets:
+Take a fully connected network (`M`) and train it on 4 datasets:
 
 ***
 
@@ -166,9 +191,6 @@ We might also go with an even simpler "classification" version, where `f(X) = x 
 The value to be predicted, `Y = 0 | f(x) < lim1, 1 | lim1 < f(x) < lim2, 2 | lim2 < f(x)`
 
 lim1 and lim2 will be picked such that, for randomly generate values in X between 1 and 9, the split between the potential values of Y in the dataset is 33/33/33.
-
-M will be picked such that it can converge on a solution to this equation with some accuracy that's close to perfect. Let's say M is a fully connected network with 2 hidden layers of sizes: `[SUM(k for k from 1 to n+1), n+1]`, the need for the added slack in the architecture will become apparent in the next 2 datasets.
-
 
 ***
 
@@ -205,29 +227,160 @@ I want to test some solutions here and evaluate them based on six criteria:
 6. same as (4) but on the whole dataset rather than a random subset.
 7. Assuming a situation where a wrong predictions is `-1` and a correct prediction `1`, and the accuracy score is the sum of all these `-1` and `1` values. Would weighting this value by their associated confidence increase the value of this sum ?
 8. How long does the setup take to converge on a validation dataset ? For ease of experimenting this means "how long does the main predictive model take to converge", once that converges we'll stop regardless of how good the confidence model has gotten. This will also be capped to avoid wasting too much time if a given model fails to converge in a reasonable amount of time compared to the others.
+9. The number of epochs it takes each model to converge.
 
-Some of these may not seems that intuitive/interesting, but are useful to evaluate during the experiment in order to make small tweaks and find errors with the models (e.g. criteria 1,2,5 and 6)
+The models evaluated will be:
 
-The solutions will be:
+* Just letting `M` predict, no confidence involved.
 
-* Just letting `M` predict, confidence will be == overall acc % on the training set.
+* Let `M` predict and have a separate model `C` that predicts the confidence (on a scale from 0 to 1) based on the inputs `X` and `Yh`.
 
-* Let `M` predict and have a separate model `C` that predicts the confidence (on a scale from 0 to 1) based on the inputs into `M` and the outputs `M` produces.
-
-* Let a different model `M'` predict, this is a model just like `M` *but* includes an additional cell into the outputs that represents a confidence value (on a scale from 0 to 1) and include additional cells evenly distributed in all 3 layers in order to have an `M'` training in roughly equal time to that of `M` + `C`.
+* Let a different model `M'` predict, this is a model similar to `M` **but** it includes an additional cell into the outputs for predicting a confidence value and some additional cells evenly distributed in all layers in order to have an `M'` training in roughly equal time to that of `M` + `C`.
 
 * Let `M` predict and have a separate model `C` that predicts the confidence just like before, however, the loss from the `Yh` component of the last layer of `C` is backproped through `M`.
 
-## Experimental setup
+***
 
-I will run each model through all dataset and compare the results. Running model `M` alone serves as a sanity benchmark for the accuracy values and is there in order to set the maximum training time (4x how long it take to "converge" on validation data) in order to avoid wasting too much time on setups that are very low to converge (thes would probably be impractical).
+I will run each model through all dataset and compare the results. Running model `M` alone serves as a sanity benchmark for the accuracy values and is there in order to set the maximum training time (4x how long it take to "converge" on validation data) in order to avoid wasting too much time on setups that are very slow to converge (these would probably be impractical).
 
-I will also use multiple parameters to generate the datasets, the combinations will be between:
+I will also use multiple datasets, the combinations will be:
 1. Degree: 3 ,4 ,5 ,and 6
 2. Function: linear, polynomial ,and polynomial with coefficients
 
-For each dataset I will generate a training, validationa and testing set of equal size, consisting of either ~1/3 of all possible combinations or 10,000 observations (whichever is smaller), without any repeated values for `X`.
+For each dataset I will generate a training, validationa and testing set of equal size, consisting of either ~1/3 of all possible combinations or 10,000 observations (whichever is smaller), without any duplicate values in `X`.
 
-Barring issues with training time or the benchmark model `M` failing to converge I will use the 6th degree polynomial with coefficients as my example, as it should be the most complex dataset of the bunch.
+Barring issues with training time I will use the 6th degree polynomial with coefficients as my example, as it should be the most complex dataset of the bunch.
 
 Though, I might use the other examples to point out interesting behavior. This is not set in stone, but I think it's good to lay this out beforehand as to not be tempted to hack my experiment in order to generate nicer looking results, I already have way too many measures to cherry pick an effect out of anyway.
+
+## 6. The results
+
+A few days later, I have some results:
+
+Here they are (for the 6th degree polynomial with coefficients dataset):
+
+<a><img src="img/1._Accuracy_absolute_.png" width="400"/></a>
+<a><img src="img/2._High_confidence_%280.8_quantile%29_accuracy_absolute_.png" width="400"/></a>
+<a><img src="img/3._Average_confidence_%280.5_quantile%29_accuracy_absolute_.png" width="400"/></a>
+<a><img src="img/4._Above_worst_confidence_%280.2_quantile%29_accuracy_absolute_.png" width="400"/></a>
+<a><img src="img/5._Subset_acc_over_conf_absolute_.png" width="400"/></a>
+<a><img src="img/6._Full_dataset_acc_over_conf_absolute_.png" width="400"/></a>
+<a><img src="img/7._Confidence_weighted_accuracy_absolute_.png" width="400"/></a>
+<a><img src="img/8._Training_time_absolute_.png" width="400"/></a>
+<a><img src="img/9._Nr_Epochs_absolute_.png" width="400"/></a>
+
+Let's explore these one by one:
+
+In terms of raw accuracy, all models performed basically the same, there's some difference, but considering there's some difference between `M+C` and `M`, sometimes with `M`'s accuracy being lower, I think it's safe to think of these small differences as just noise.
+
+This is somewhat disappointing, but to be fair, the models are doing close-to-perfect here anyway, so it could be hard for `Mprim` or `MC` to improve anything. Well, except for the `c` dataset, in theory one should be able to get an accuracy of ~89% of the `c` dataset, `M`'s accuracy however is only 75%. So one would expect this is where `Mprim` or `MC` could shine, but they don't. There's a `1%` improvement with `Mprim` and even an insignificant drop with `MC` compared to `M`.
+
+There's a bit of hope when we look at graph nr 2 and 3 measuring the accuracy for high and medium confidence predictions. On all 3 datasets and for all 3 approaches both of these are basically 100%. However, this doesn't hold for graph nr 4, where we take all but the bottom 20% predictions in terms of confidence, here we have a very small accuracy improvement, but it's so tiny it might as well be noise.
+
+Graph 5 and 6 look at how "correct" the confidence is on average. Ideally the mean confidence should be equal to the accuracy. In that case, both these graphs would be equal to 0.
+
+This is not quite the case here, but it's close enough, we have difference between 0.2 and 1.4% between the mean confidence and the accuracy... not bad. Also, keep in mind that we test this both on the full testing datasets and a random subset, so this is likely to generalize to any large enough subset of data similar to the training data. Of course, "large enough" and "similar" are basically handwavey terms here.
+
+Lastly, we look at 7 and observe that weighting the accuracy by the confidence doesn't improve accuracy, if anything it seems to make it insignificantly smaller. There might be other ways to observe an effect size here, namely only selecting values with a low confidence, but I'm still rather disappointed by this turnout.
+
+Finally, the training time and number of epochs is unexpected, I'd have assumed Mprim takes the longest to converge, followed by MC and that M+C is the fastest. However, on the `c` dataset we observe the exact opposite. This *might* serve as some indication that `MC` and `Mprim` are able to "kind of figure out" the random element earlier, but I don't want to read too much into it.
+
+Let's also take a look at the relative plots:
+
+<a><img src="img/1._Accuracy_relative_.png" width="400"/></a>
+<a><img src="img/2._High_confidence_%280.8_quantile%29_accuracy_relative_.png" width="400"/></a>
+<a><img src="img/3._Average_confidence_%280.5_quantile%29_accuracy_relative_.png" width="400"/></a>
+<a><img src="img/4._Above_worst_confidence_%280.2_quantile%29_accuracy_relative_.png" width="400"/></a>
+<a><img src="img/5._Subset_acc_over_conf_relative_.png" width="400"/></a>
+<a><img src="img/6._Full_dataset_acc_over_conf_relative_.png" width="400"/></a>
+<a><img src="img/7._Confidence_weighted_accuracy_relative_.png" width="400"/></a>
+<a><img src="img/8._Training_time_relative_.png" width="400"/></a>
+<a><img src="img/9._Nr_Epochs_relative_.png" width="400"/></a>
+
+
+***
+
+Ok, before I draw any conclusion I also want to do a brief analysis of all the datapoints I collected. Maybe there's some more signal in all that noise.
+
+Again, remember I have datasets a,b and c generated using a linear polynomial and polynomial-with-coefficients formula for degrees 3,4,5 and 6. That's 44 more datasets to draw some conclusions from.
+
+I'm going to average out all the scores per model for each dataset and for all dataset combined to see if I find any outliers. I also tried finding scores that were surprisingly high (e.g. `MC` performing 10% better than `M+C` and `Mprim` on a specific dataset) but couldn't find any, however feel free to run the code for yourself and dig thorugh my results or generate your own.
+
+That aside being said:
+
+#### 1. On all datasets combined
+
+`M+C` performs better by 1-4% on all accuracy metrics metrics: Accuracy, High confidence accuracy, Average confidence accuracy, Above worst confidence accuracy. Next comes `MC` and `Mprim` is the worst of the bunch by far (`MC` and `M+C` are within 1-2%, `Mprim` is 3-6% away)
+
+`M+C` and `MC` perform about equally on the acc/conf tradeoff both on the whole dataset and on the sample, being off by 2-3.7%. `Mprim` however is much worst and on average it's off by ~23%.
+
+When we "weight" the accuracy using the confidence, the resulting accuracy is still slightly worst for all models compared to the original `M`. However, again, `Mprim` falls behind both `M+C` and `MC`.
+
+#### 2. On dataset of type a
+
+The pattern for the accuracy metric change a bit, with `MC` being above or about the same as `M+C` and even managing to beat `M` in overall accuracy. But the difference is not that significant
+
+`Mprim` peforms horribly, with errors > 45% in the accuracy/confidence tradeoff, both `M+C` and `MC` perform close to perfect, with `M+C` having errors ~3% and `MC` ~0.5%.
+
+The story for weighted accuracy stays the same.
+
+#### 3. On dataset of type b
+
+The pattern for accuracy has `Mprim` and `M+C` tied here, with `MC` being ~4% worst on the overall accuracy and the accuracy of the top 80% of predictions chosen by confidence (i.e. metric 4, above worst confidence).
+
+The acc/conf metric is about the same for all models, nearing a perfect match with erros in the 0.x% and 0.0x%.
+
+The story for weighted accuracy stays the same.
+
+#### 4. On dataset of type c
+
+We've finally reached the good stuff.
+
+This is the only dataset type that is impossible to perfectly predict, this is the kind of situation for which I'd expect confidence models to be relevant.
+
+Average accuracy is abysmal for all models, ranging from 61% to 68%.
+
+When looking at the accuracy of predictions picked by high confidence, for the 0.8 and 0.5 confidence quantile `M+C` has much better accuracy than `Mprim` and `M+C`
+
+For above worst confidence accuracy (0.2 quantile) all models perform equall badly, at ~73%, but this is still a 5% improvement over the original accuracy.
+
+In terms of the acc/conf metric, `M+C` only has an error of ~2 and ~3%, while `MC` has errors ~11% and `Mprim` has errors of ~22% and ~24%.
+
+Finally, when looking at the confidence weighted accuracy, all 3 confidence model beat the standard accuracy metric, which is encouraging. `MC` does best, but only marginally better than `Mprim`.
+
+**However** `M`'s accuracy results on datasets of type c were really bad, when we compare the confidence weighted accuracy to the plain accuracy of e.g. `MC`, `M+C` and `Mprim` the confidence weighted accuracy is still slightly bellow the raw accuracy.
+
+## 7. Conclusions
+
+To recapitulate, we've tried various datasets that use a multiple-parameter equation to model a 3-way categorial label in order to test various ways of estimating prediction confidence using fully connected networks.
+
+One the datasets was manipulated to introduce predictable noise in the input->label relationship, the other was manipulated to introduce unpredictable noise in the input->label relationship.
+
+We tried 3 different models:
+* `M+C` which is a normal model and a separate confidence predicting network that uses the ouputs of `M` and the inputs of `M` as it's own input.
+* `MC` which is the same as `M+C` except for the fact that the cost from the `Y` component of the first layer of `C` is propagated through `M`.
+* `MPrim` which is a somewhat larger model with an extra output cell representing a confidence value.
+
+It seems that in all 3 scenarios, all 3 models can be useful for selecting predictions with higher than average accuracy and are able to predict a reliable confidence number, under the assumption that a reliable confidence, when averaged out, should be about equal to the model's accuracy.
+
+On the above task, `MC` and `M+C` performed about equally well, with a potential edge going out to `M+C`. `MPrim` performed significantly worst on many of the datasets.
+
+We did not obtain any significant results in terms of improving the overall accuracy using `MC` and `MPrim`, weighting the accuracy by the confidence did not improve the overall accuracy.
+
+For `MC` and `M+C`, the average confidence matched the average accuracy with a < 0.05 error for the vast majority of datasets, which indicates some "correctness" regrading the confidence.
+
+This is enough to motivate me to do a bit more digging, potentially using more rigorous epxeriments and more complex datasets on the idea of having a separate confidence-predicting network. Both the `MC` and `M+C` approach seem to be viable candidates here. Outputting a confidence from the same model seems to show worst performance than a separate confidence network.
+
+## 8. Experimental errors
+
+* Datasets were no varied enough.
+* The normal model `M` should have obtained accuracies of ~100% on datasets of type `a` and `b` and ~88% on datasets of type `c`. The acuracies were never quite that high, maybe a completely different result would have been obtained on `c` has `M` learned how to predict it as close to reality as possibe. However, this behaviour would have negated the experimental value for datasets of type `a` and `b`.
+* MSELoss was used for the confidence (ups), a linear loss function might have been better here.
+* The stopping logic (aka what I've referred to as "model converging") uses and impractically large validation set and it's implementation isn't very straight forward.
+* The models were all trained with SDG using a small learning with. We might have obtained better and faster results with a quicker optimizer that used a scheduler.
+* Ideally, we would have trained 3 or 5, instead of 1 model per dataset. However, I avoided doing this due to time constraints (the code takes ~10 hour to run on my current machine)
+* For metrics like confidence weighted accuracy and especially conf/accuracy on a subset it might have been more correct to CV with multiple subsets. However, since the testing set was separate from the training set, I'm unsure this would have counted as a best practice.
+* The terms of the experiments were slightly altered once I realized I wanted to measure more metrics than I had originally planned.
+* There are a few anomalies caused by no value being present in the 0.8th quantile of confidence, pressumably I should have used a `>=` rather than `>` operator, but now it's too late.
+
+On the whole, if people find this interesting I might run a more thorough experiment taking into account the above points. That being said, I don't think these "errors" affect the conclusion too much.

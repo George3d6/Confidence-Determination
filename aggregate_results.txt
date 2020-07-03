@@ -1,0 +1,187 @@
+Results on dataset: a
+
+
+
+
+Measuring metric: 1. Accuracy
+M+C - 0.9562133042133043
+MC - 0.9578967125541382
+Mprim - 0.884141667635232
+M - 0.9543449960311347
+
+
+Measuring metric: 2. High confidence (0.8 quantile) accuracy
+M+C - 0.9986672913543228
+MC - 1.0
+Mprim - 0.8653384333952427
+
+
+Measuring metric: 3. Average confidence (0.5 quantile) accuracy
+M+C - 0.996528396900929
+MC - 1.0
+Mprim - 0.887524139294272
+
+
+Measuring metric: 4. Above worst confidence (0.2 quantile) accuracy
+M+C - 0.9562133042133043
+MC - 0.9578967125541382
+Mprim - 0.9567142402078046
+
+
+Measuring metric: 5. Subset acc/conf
+M+C - 1.033896159881337
+MC - 0.9968430025602987
+Mprim - 1.477858236904722
+
+
+Measuring metric: 6. Full dataset acc/conf
+M+C - 1.0339039098222662
+MC - 0.9955293564863594
+Mprim - 1.4572108732731326
+
+
+Measuring metric: 7. Confidence weighted accuracy
+M+C - 0.9151520097392886
+MC - 0.9484957246390318
+Mprim - 0.8731600513599923
+M - 0.9543449960311347
+
+
+Measuring metric: 8. Training time
+M+C - 191.89592542250952
+MC - 239.7063227891922
+Mprim - 675.9721487760544
+M - 336.92732957998913
+
+
+Measuring metric: 9. Nr Epochs
+M+C - 567.8333333333334
+MC - 464.1666666666667
+Mprim - 709.25
+M - 782.0
+
+
+Results on dataset: b
+
+
+
+
+Measuring metric: 1. Accuracy
+M+C - 0.967567808267313
+MC - 0.9173510165430959
+Mprim - 0.9554234139179685
+M - 0.9529699404174652
+
+
+Measuring metric: 2. High confidence (0.8 quantile) accuracy
+M+C - 0.9944416672260884
+MC - 0.9933589585804113
+Mprim - 0.9893833344521771
+
+
+Measuring metric: 3. Average confidence (0.5 quantile) accuracy
+M+C - 0.9929422501530732
+MC - 0.9857473910045945
+Mprim - 0.9906342180245593
+
+
+Measuring metric: 4. Above worst confidence (0.2 quantile) accuracy
+M+C - 0.967567808267313
+MC - 0.9173510165430959
+Mprim - 0.9554234139179685
+
+
+Measuring metric: 5. Subset acc/conf
+M+C - 1.003066789037817
+MC - 0.9963157865301909
+Mprim - 1.0086175083915156
+
+
+Measuring metric: 6. Full dataset acc/conf
+M+C - 1.0066431238297258
+MC - 0.9961893995233623
+Mprim - 1.0084231293221426
+
+
+Measuring metric: 7. Confidence weighted accuracy
+M+C - 0.9506242298732711
+MC - 0.8968616747036079
+Mprim - 0.9327464003058882
+M - 0.9529699404174652
+
+
+Measuring metric: 8. Training time
+M+C - 165.5318792462349
+MC - 193.97594515482584
+Mprim - 118.53386398156483
+M - 85.5016559958458
+
+
+Measuring metric: 9. Nr Epochs
+M+C - 818.75
+MC - 684.9166666666666
+Mprim - 562.0833333333334
+M - 796.4166666666666
+
+
+Results on dataset: c
+
+
+
+
+Measuring metric: 1. Accuracy
+M+C - 0.6827810118849723
+MC - 0.6821306313964729
+Mprim - 0.6741036092347974
+M - 0.6120727584920654
+
+
+Measuring metric: 2. High confidence (0.8 quantile) accuracy
+M+C - 0.9550952937710249
+MC - 0.8698136827108834
+Mprim - 0.8779427860696516
+
+
+Measuring metric: 3. Average confidence (0.5 quantile) accuracy
+M+C - 0.9271623362598053
+MC - 0.8849530163872776
+Mprim - 0.8812370321622627
+
+
+Measuring metric: 4. Above worst confidence (0.2 quantile) accuracy
+M+C - 0.7375256643733493
+MC - 0.7385171789654555
+Mprim - 0.7299072916248622
+
+
+Measuring metric: 5. Subset acc/conf
+M+C - 1.0249647027844202
+MC - 1.0906617067103483
+Mprim - 1.2195960033279993
+
+
+Measuring metric: 6. Full dataset acc/conf
+M+C - 1.0332312849970333
+MC - 1.118010867992017
+Mprim - 1.2405742139100122
+
+
+Measuring metric: 7. Confidence weighted accuracy
+M+C - 0.6347383845384076
+MC - 0.6449654667387584
+Mprim - 0.6424076879892678
+M - 0.6120727584920654
+
+
+Measuring metric: 8. Training time
+M+C - 1099.1323121587436
+MC - 1190.5135613481204
+Mprim - 721.52865366141
+M - 540.0728736321131
+
+
+Measuring metric: 9. Nr Epochs
+M+C - 1272.1666666666667
+MC - 1135.0
+Mprim - 798.5833333333334
+M - 807.4166666666666

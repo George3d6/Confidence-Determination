@@ -5,11 +5,60 @@ import seaborn as sns
 import numpy as np
 # https://towardsdatascience.com/a-new-plot-theme-for-matplotlib-gadfly-2cffc745ff84
 
-data = json.load(open('results/Results_6.json','r'))
+dataset_arr = ['a','b','c']
+model_arr = ['M+C','MC','Mprim','M']
+mode_arr = ['polynomial_w_coef','polynomial','linear']
+
+model_perf_map = {}
+model_perf_cnt_map = {}
+for dataset in dataset_arr:
+    model_perf_map[dataset] = {}
+    model_perf_cnt_map[dataset] = {}
+
+for degree in ['3','4','5','6']:
+    data = json.load(open(f'results/Results_{degree}_batch2.json','r'))
+    metric_arr = list(list(data.values())[0]['polynomial_w_coef']['M']['a'].keys())
+    for mode in mode_arr:
+        for dataset in dataset_arr:
+            for metric in metric_arr:
+
+                if metric not in model_perf_map[dataset]:
+                    model_perf_map[dataset][metric] = {}
+                    model_perf_cnt_map[dataset][metric] = {}
+
+                model_val = {}
+                for model in model_arr:
+                    if data[degree][mode][model][dataset][metric] is None:
+                        continue
+                    val = data[degree][mode][model][dataset][metric]
+                    model_val[model] = val
+
+                for model, val in model_val.items():
+                    if model not in model_perf_map[dataset][metric]:
+                        model_perf_map[dataset][metric][model] = 0
+                        model_perf_cnt_map[dataset][metric][model] = 0
+                    if str(val) == 'nan':
+                        val = np.min([x for x in model_val.values() if str(x) != 'nan'])
+
+                    model_perf_map[dataset][metric][model] += val/1
+                    model_perf_cnt_map[dataset][metric][model] += 1
+
+for dataset in model_perf_map:
+    print(f'\n\n Results on dataset: {dataset}\n\n')
+    for k, v in model_perf_map[dataset].items():
+
+        print(f'\n\nMeasuring metric: {k}')
+        for model in v:
+            val = v[model]/model_perf_cnt_map[dataset][k][model]
+            print(f'{model} - {val}')
+exit()
+
+data = json.load(open('results/Results_6_batch2.json','r'))
 
 dataset_arr = ['a','b','c']
-model_arr = ['M','M+C','MC','Mprim']
-mode = 'relative' # 'absolute'
+model_arr = ['M+C','MC','Mprim','M']
+mode = 'relative'
+mode = 'absolute'
 
 plt.rcParams["figure.figsize"] = (10,10)
 for metric in data['6']['polynomial_w_coef']['M']['a'].keys():
@@ -59,11 +108,13 @@ for metric in data['6']['polynomial_w_coef']['M']['a'].keys():
     box = ax.get_position()
     ax.set_position([box.x0, box.y0, box.width * 0.8, box.height])
 
-    ax.legend( samples, model_arr_mod, bbox_to_anchor=(1, 0.8))
+    ax.legend( samples, model_arr_mod, bbox_to_anchor=(1, 0.8), fontsize='xx-large')
 
     for plot in plot_arr:
         for ele in plot:
             h = ele.get_height()
             #ax.text(ele.get_x()+ele.get_width()/2., 1.5*h, '%d'%int(h*1.5), ha='center', va='bottom')
     #plt.show()
-    plt.savefig('img/' + metric.replace(' ', '_').replace('/','_over_') + f'_{mode}_' + '.png')
+    fn = 'img/' + metric.replace(' ', '_').replace('/','_over_') + f'_{mode}_' + '.png'
+    print(fn)
+    plt.savefig(fn)

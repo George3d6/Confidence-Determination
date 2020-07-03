@@ -80,7 +80,7 @@ class DataSource(Dataset):
     def __getitem__(self, idx): return self.X[idx], self.Y[idx]
 
 
-with open('Results.txt', 'w') as fp:
+with open('Results_batch2.txt', 'w') as fp:
     fp.write('')
 
 M_train_time = {}
@@ -128,9 +128,11 @@ for degree in [3,4,5,6]:
                 delta_stop_size = 10
                 best_stop_size = delta_stop_size * 5
                 lr_reductions = 0
+                nr_epochs = 0
 
                 start_train = time.time()
                 for epoch in range(3000):
+                    nr_epochs += 1
                     if model != 'M':
                         if time.time() - start_train > max_train_time:
                             break
@@ -214,6 +216,8 @@ for degree in [3,4,5,6]:
                     acc, eval_data = validate(mode, data_test,best_model.to(device), True)
 
                 eval_data['8. Training time'] = training_time
+                eval_data['9. Nr Epochs'] = nr_epochs
+
                 dataset = str(data_gen_func).split('function ')[1].split(' at')[0].replace('gen_', '')
                 acc = round(acc*100,2)
                 out = ''
@@ -229,7 +233,7 @@ for degree in [3,4,5,6]:
                     out += f'{k} : {v}\n'
                 out += '\n---------------------------\n\n'
                 print(out)
-                with open('Results.txt', 'a') as fp:
+                with open('Results_batch2.txt', 'a') as fp:
                     fp.write(out)
 
                 if degree not in exp_result: exp_result[degree] = {}
@@ -238,4 +242,4 @@ for degree in [3,4,5,6]:
 
                 exp_result[degree][mode][model][dataset] = eval_data
 
-    json.dump(exp_result, open(f'Results_{degree}.json', 'w'))
+    json.dump(exp_result, open(f'Results_{degree}_batch2.json', 'w'))

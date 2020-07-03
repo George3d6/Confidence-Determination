@@ -1,0 +1,2880 @@
+Model: M
+Degree: 3
+Mode: polynomial_w_coef
+Dataset: a)
+Accuracy score of 93.39%
+
+---------------------------
+
+1. Accuracy : 0.868
+2. High confidence (0.8 quantile) accuracy : None
+3. Average confidence (0.5 quantile) accuracy : None
+4. Above worst confidence (0.2 quantile) accuracy : None
+5. Subset acc/conf : None
+6. Full dataset acc/conf : None
+7. Confidence weighted accuracy : 0.868
+8. Training time : 22.28
+9. Nr Epochs : 620
+
+---------------------------
+
+Model: M
+Degree: 3
+Mode: polynomial_w_coef
+Dataset: b)
+Accuracy score of 97.9%
+
+---------------------------
+
+1. Accuracy : 0.958
+2. High confidence (0.8 quantile) accuracy : None
+3. Average confidence (0.5 quantile) accuracy : None
+4. Above worst confidence (0.2 quantile) accuracy : None
+5. Subset acc/conf : None
+6. Full dataset acc/conf : None
+7. Confidence weighted accuracy : 0.958
+8. Training time : 90.241
+9. Nr Epochs : 2530
+
+---------------------------
+
+Model: M
+Degree: 3
+Mode: polynomial_w_coef
+Dataset: c)
+Accuracy score of 45.65%
+
+---------------------------
+
+1. Accuracy : -0.087
+2. High confidence (0.8 quantile) accuracy : None
+3. Average confidence (0.5 quantile) accuracy : None
+4. Above worst confidence (0.2 quantile) accuracy : None
+5. Subset acc/conf : None
+6. Full dataset acc/conf : None
+7. Confidence weighted accuracy : -0.087
+8. Training time : 3.558
+9. Nr Epochs : 100
+
+---------------------------
+
+Model: M+C
+Degree: 3
+Mode: polynomial_w_coef
+Dataset: a)
+Accuracy score of 92.79%
+
+---------------------------
+
+1. Accuracy : 0.856
+2. High confidence (0.8 quantile) accuracy : 1.0
+3. Average confidence (0.5 quantile) accuracy : 1.0
+4. Above worst confidence (0.2 quantile) accuracy : 0.856
+5. Subset acc/conf : 0.966
+6. Full dataset acc/conf : 0.97
+7. Confidence weighted accuracy : 0.833
+8. Training time : 33.025
+9. Nr Epochs : 537
+
+---------------------------
+
+Model: M+C
+Degree: 3
+Mode: polynomial_w_coef
+Dataset: b)
+Accuracy score of 97.0%
+
+---------------------------
+
+1. Accuracy : 0.94
+2. High confidence (0.8 quantile) accuracy : 1.0
+3. Average confidence (0.5 quantile) accuracy : 1.0
+4. Above worst confidence (0.2 quantile) accuracy : 0.94
+5. Subset acc/conf : 0.994
+6. Full dataset acc/conf : 1.0
+7. Confidence weighted accuracy : 0.922
+8. Training time : 186.414
+9. Nr Epochs : 3000
+
+---------------------------
+
+Model: M+C
+Degree: 3
+Mode: polynomial_w_coef
+Dataset: c)
+Accuracy score of 45.95%
+
+---------------------------
+
+1. Accuracy : -0.081
+2. High confidence (0.8 quantile) accuracy : 0.582
+3. Average confidence (0.5 quantile) accuracy : 0.217
+4. Above worst confidence (0.2 quantile) accuracy : 0.568
+5. Subset acc/conf : 1.02
+6. Full dataset acc/conf : 1.113
+7. Confidence weighted accuracy : 0.046
+8. Training time : 8.37
+9. Nr Epochs : 129
+
+---------------------------
+
+Model: MC
+Degree: 3
+Mode: polynomial_w_coef
+Dataset: a)
+Accuracy score of 94.29%
+
+---------------------------
+
+1. Accuracy : 0.886
+2. High confidence (0.8 quantile) accuracy : 1.0
+3. Average confidence (0.5 quantile) accuracy : 1.0
+4. Above worst confidence (0.2 quantile) accuracy : 0.886
+5. Subset acc/conf : 0.991
+6. Full dataset acc/conf : 0.983
+7. Confidence weighted accuracy : 0.858
+8. Training time : 56.956
+9. Nr Epochs : 743
+
+---------------------------
+
+Model: MC
+Degree: 3
+Mode: polynomial_w_coef
+Dataset: b)
+Accuracy score of 85.89%
+
+---------------------------
+
+1. Accuracy : 0.718
+2. High confidence (0.8 quantile) accuracy : 0.97
+3. Average confidence (0.5 quantile) accuracy : 0.928
+4. Above worst confidence (0.2 quantile) accuracy : 0.718
+5. Subset acc/conf : 0.99
+6. Full dataset acc/conf : 0.981
+7. Confidence weighted accuracy : 0.659
+8. Training time : 218.775
+9. Nr Epochs : 3000
+
+---------------------------
+
+Model: MC
+Degree: 3
+Mode: polynomial_w_coef
+Dataset: c)
+Accuracy score of 45.65%
+
+---------------------------
+
+1. Accuracy : -0.087
+2. High confidence (0.8 quantile) accuracy : -0.403
+3. Average confidence (0.5 quantile) accuracy : -0.241
+4. Above worst confidence (0.2 quantile) accuracy : nan
+5. Subset acc/conf : 2.094
+6. Full dataset acc/conf : 2.463
+7. Confidence weighted accuracy : -0.036
+8. Training time : 10.349
+9. Nr Epochs : 124
+
+---------------------------
+
+Model: Mprim
+Degree: 3
+Mode: polynomial_w_coef
+Dataset: a)
+Accuracy score of 95.2%
+
+---------------------------
+
+1. Accuracy : 0.904
+2. High confidence (0.8 quantile) accuracy : 0.97
+3. Average confidence (0.5 quantile) accuracy : 0.976
+4. Above worst confidence (0.2 quantile) accuracy : 0.904
+5. Subset acc/conf : 0.96
+6. Full dataset acc/conf : 0.958
+7. Confidence weighted accuracy : 0.902
+8. Training time : 182.788
+9. Nr Epochs : 3000
+
+---------------------------
+
+Model: Mprim
+Degree: 3
+Mode: polynomial_w_coef
+Dataset: b)
+Accuracy score of 99.4%
+
+---------------------------
+
+1. Accuracy : 0.988
+2. High confidence (0.8 quantile) accuracy : 0.97
+3. Average confidence (0.5 quantile) accuracy : 0.988
+4. Above worst confidence (0.2 quantile) accuracy : 0.988
+5. Subset acc/conf : 1.004
+6. Full dataset acc/conf : 0.998
+7. Confidence weighted accuracy : 0.984
+8. Training time : 179.091
+9. Nr Epochs : 3000
+
+---------------------------
+
+Model: Mprim
+Degree: 3
+Mode: polynomial_w_coef
+Dataset: c)
+Accuracy score of 45.35%
+
+---------------------------
+
+1. Accuracy : -0.093
+2. High confidence (0.8 quantile) accuracy : -0.463
+3. Average confidence (0.5 quantile) accuracy : -0.325
+4. Above worst confidence (0.2 quantile) accuracy : nan
+5. Subset acc/conf : 3.778
+6. Full dataset acc/conf : 3.968
+7. Confidence weighted accuracy : -0.015
+8. Training time : 5.223
+9. Nr Epochs : 83
+
+---------------------------
+
+Model: M
+Degree: 3
+Mode: linear
+Dataset: a)
+Accuracy score of 97.9%
+
+---------------------------
+
+1. Accuracy : 0.958
+2. High confidence (0.8 quantile) accuracy : None
+3. Average confidence (0.5 quantile) accuracy : None
+4. Above worst confidence (0.2 quantile) accuracy : None
+5. Subset acc/conf : None
+6. Full dataset acc/conf : None
+7. Confidence weighted accuracy : 0.958
+8. Training time : 18.308
+9. Nr Epochs : 516
+
+---------------------------
+
+Model: M
+Degree: 3
+Mode: linear
+Dataset: b)
+Accuracy score of 98.2%
+
+---------------------------
+
+1. Accuracy : 0.964
+2. High confidence (0.8 quantile) accuracy : None
+3. Average confidence (0.5 quantile) accuracy : None
+4. Above worst confidence (0.2 quantile) accuracy : None
+5. Subset acc/conf : None
+6. Full dataset acc/conf : None
+7. Confidence weighted accuracy : 0.964
+8. Training time : 105.506
+9. Nr Epochs : 3000
+
+---------------------------
+
+Model: M
+Degree: 3
+Mode: linear
+Dataset: c)
+Accuracy score of 87.99%
+
+---------------------------
+
+1. Accuracy : 0.76
+2. High confidence (0.8 quantile) accuracy : None
+3. Average confidence (0.5 quantile) accuracy : None
+4. Above worst confidence (0.2 quantile) accuracy : None
+5. Subset acc/conf : None
+6. Full dataset acc/conf : None
+7. Confidence weighted accuracy : 0.76
+8. Training time : 66.927
+9. Nr Epochs : 1887
+
+---------------------------
+
+Model: M+C
+Degree: 3
+Mode: linear
+Dataset: a)
+Accuracy score of 98.2%
+
+---------------------------
+
+1. Accuracy : 0.964
+2. High confidence (0.8 quantile) accuracy : 1.0
+3. Average confidence (0.5 quantile) accuracy : 1.0
+4. Above worst confidence (0.2 quantile) accuracy : 0.964
+5. Subset acc/conf : 1.015
+6. Full dataset acc/conf : 1.025
+7. Confidence weighted accuracy : 0.925
+8. Training time : 108.176
+9. Nr Epochs : 1784
+
+---------------------------
+
+Model: M+C
+Degree: 3
+Mode: linear
+Dataset: b)
+Accuracy score of 97.9%
+
+---------------------------
+
+1. Accuracy : 0.958
+2. High confidence (0.8 quantile) accuracy : 0.94
+3. Average confidence (0.5 quantile) accuracy : 0.94
+4. Above worst confidence (0.2 quantile) accuracy : 0.958
+5. Subset acc/conf : 1.088
+6. Full dataset acc/conf : 1.096
+7. Confidence weighted accuracy : 0.853
+8. Training time : 160.737
+9. Nr Epochs : 2617
+
+---------------------------
+
+Model: M+C
+Degree: 3
+Mode: linear
+Dataset: c)
+Accuracy score of 89.79%
+
+---------------------------
+
+1. Accuracy : 0.796
+2. High confidence (0.8 quantile) accuracy : 1.0
+3. Average confidence (0.5 quantile) accuracy : 1.0
+4. Above worst confidence (0.2 quantile) accuracy : 0.796
+5. Subset acc/conf : 1.058
+6. Full dataset acc/conf : 1.113
+7. Confidence weighted accuracy : 0.664
+8. Training time : 178.603
+9. Nr Epochs : 2908
+
+---------------------------
+
+Model: MC
+Degree: 3
+Mode: linear
+Dataset: a)
+Accuracy score of 97.6%
+
+---------------------------
+
+1. Accuracy : 0.952
+2. High confidence (0.8 quantile) accuracy : 1.0
+3. Average confidence (0.5 quantile) accuracy : 1.0
+4. Above worst confidence (0.2 quantile) accuracy : 0.952
+5. Subset acc/conf : 1.025
+6. Full dataset acc/conf : 1.048
+7. Confidence weighted accuracy : 0.89
+8. Training time : 98.629
+9. Nr Epochs : 1364
+
+---------------------------
+
+Model: MC
+Degree: 3
+Mode: linear
+Dataset: b)
+Accuracy score of 89.79%
+
+---------------------------
+
+1. Accuracy : 0.796
+2. High confidence (0.8 quantile) accuracy : 1.0
+3. Average confidence (0.5 quantile) accuracy : 0.988
+4. Above worst confidence (0.2 quantile) accuracy : 0.796
+5. Subset acc/conf : 1.071
+6. Full dataset acc/conf : 1.015
+7. Confidence weighted accuracy : 0.728
+8. Training time : 56.594
+9. Nr Epochs : 802
+
+---------------------------
+
+Model: MC
+Degree: 3
+Mode: linear
+Dataset: c)
+Accuracy score of 91.89%
+
+---------------------------
+
+1. Accuracy : 0.838
+2. High confidence (0.8 quantile) accuracy : 0.94
+3. Average confidence (0.5 quantile) accuracy : 0.964
+4. Above worst confidence (0.2 quantile) accuracy : 0.847
+5. Subset acc/conf : 1.093
+6. Full dataset acc/conf : 1.018
+7. Confidence weighted accuracy : 0.776
+8. Training time : 200.283
+9. Nr Epochs : 2778
+
+---------------------------
+
+Model: Mprim
+Degree: 3
+Mode: linear
+Dataset: a)
+Accuracy score of 97.3%
+
+---------------------------
+
+1. Accuracy : 0.946
+2. High confidence (0.8 quantile) accuracy : 1.0
+3. Average confidence (0.5 quantile) accuracy : 0.988
+4. Above worst confidence (0.2 quantile) accuracy : 0.946
+5. Subset acc/conf : 1.002
+6. Full dataset acc/conf : 1.041
+7. Confidence weighted accuracy : 0.887
+8. Training time : 17.836
+9. Nr Epochs : 296
+
+---------------------------
+
+Model: Mprim
+Degree: 3
+Mode: linear
+Dataset: b)
+Accuracy score of 89.79%
+
+---------------------------
+
+1. Accuracy : 0.796
+2. High confidence (0.8 quantile) accuracy : 0.94
+3. Average confidence (0.5 quantile) accuracy : 0.952
+4. Above worst confidence (0.2 quantile) accuracy : 0.796
+5. Subset acc/conf : 1.025
+6. Full dataset acc/conf : 1.015
+7. Confidence weighted accuracy : 0.728
+8. Training time : 27.903
+9. Nr Epochs : 463
+
+---------------------------
+
+Model: Mprim
+Degree: 3
+Mode: linear
+Dataset: c)
+Accuracy score of 86.79%
+
+---------------------------
+
+1. Accuracy : 0.736
+2. High confidence (0.8 quantile) accuracy : 1.0
+3. Average confidence (0.5 quantile) accuracy : 1.0
+4. Above worst confidence (0.2 quantile) accuracy : 0.743
+5. Subset acc/conf : 1.054
+6. Full dataset acc/conf : 1.062
+7. Confidence weighted accuracy : 0.654
+8. Training time : 51.691
+9. Nr Epochs : 855
+
+---------------------------
+
+Model: M
+Degree: 3
+Mode: polynomial
+Dataset: a)
+Accuracy score of 96.4%
+
+---------------------------
+
+1. Accuracy : 0.928
+2. High confidence (0.8 quantile) accuracy : None
+3. Average confidence (0.5 quantile) accuracy : None
+4. Above worst confidence (0.2 quantile) accuracy : None
+5. Subset acc/conf : None
+6. Full dataset acc/conf : None
+7. Confidence weighted accuracy : 0.928
+8. Training time : 105.718
+9. Nr Epochs : 3000
+
+---------------------------
+
+Model: M
+Degree: 3
+Mode: polynomial
+Dataset: b)
+Accuracy score of 86.19%
+
+---------------------------
+
+1. Accuracy : 0.724
+2. High confidence (0.8 quantile) accuracy : None
+3. Average confidence (0.5 quantile) accuracy : None
+4. Above worst confidence (0.2 quantile) accuracy : None
+5. Subset acc/conf : None
+6. Full dataset acc/conf : None
+7. Confidence weighted accuracy : 0.724
+8. Training time : 106.733
+9. Nr Epochs : 3000
+
+---------------------------
+
+Model: M
+Degree: 3
+Mode: polynomial
+Dataset: c)
+Accuracy score of 43.84%
+
+---------------------------
+
+1. Accuracy : -0.123
+2. High confidence (0.8 quantile) accuracy : None
+3. Average confidence (0.5 quantile) accuracy : None
+4. Above worst confidence (0.2 quantile) accuracy : None
+5. Subset acc/conf : None
+6. Full dataset acc/conf : None
+7. Confidence weighted accuracy : -0.123
+8. Training time : 3.071
+9. Nr Epochs : 88
+
+---------------------------
+
+Model: M+C
+Degree: 3
+Mode: polynomial
+Dataset: a)
+Accuracy score of 97.6%
+
+---------------------------
+
+1. Accuracy : 0.952
+2. High confidence (0.8 quantile) accuracy : 1.0
+3. Average confidence (0.5 quantile) accuracy : 0.988
+4. Above worst confidence (0.2 quantile) accuracy : 0.952
+5. Subset acc/conf : 0.988
+6. Full dataset acc/conf : 0.992
+7. Confidence weighted accuracy : 0.941
+8. Training time : 184.289
+9. Nr Epochs : 3000
+
+---------------------------
+
+Model: M+C
+Degree: 3
+Mode: polynomial
+Dataset: b)
+Accuracy score of 96.1%
+
+---------------------------
+
+1. Accuracy : 0.922
+2. High confidence (0.8 quantile) accuracy : 1.0
+3. Average confidence (0.5 quantile) accuracy : 0.988
+4. Above worst confidence (0.2 quantile) accuracy : 0.922
+5. Subset acc/conf : 0.949
+6. Full dataset acc/conf : 0.964
+7. Confidence weighted accuracy : 0.926
+8. Training time : 184.826
+9. Nr Epochs : 3000
+
+---------------------------
+
+Model: M+C
+Degree: 3
+Mode: polynomial
+Dataset: c)
+Accuracy score of 86.79%
+
+---------------------------
+
+1. Accuracy : 0.736
+2. High confidence (0.8 quantile) accuracy : 1.0
+3. Average confidence (0.5 quantile) accuracy : 0.976
+4. Above worst confidence (0.2 quantile) accuracy : 0.736
+5. Subset acc/conf : 0.964
+6. Full dataset acc/conf : 0.957
+7. Confidence weighted accuracy : 0.726
+8. Training time : 182.226
+9. Nr Epochs : 3000
+
+---------------------------
+
+Model: MC
+Degree: 3
+Mode: polynomial
+Dataset: a)
+Accuracy score of 96.7%
+
+---------------------------
+
+1. Accuracy : 0.934
+2. High confidence (0.8 quantile) accuracy : 1.0
+3. Average confidence (0.5 quantile) accuracy : 1.0
+4. Above worst confidence (0.2 quantile) accuracy : 0.934
+5. Subset acc/conf : 0.981
+6. Full dataset acc/conf : 0.947
+7. Confidence weighted accuracy : 0.96
+8. Training time : 107.592
+9. Nr Epochs : 1511
+
+---------------------------
+
+Model: MC
+Degree: 3
+Mode: polynomial
+Dataset: b)
+Accuracy score of 85.29%
+
+---------------------------
+
+1. Accuracy : 0.706
+2. High confidence (0.8 quantile) accuracy : 0.97
+3. Average confidence (0.5 quantile) accuracy : 0.928
+4. Above worst confidence (0.2 quantile) accuracy : 0.706
+5. Subset acc/conf : 0.908
+6. Full dataset acc/conf : 0.96
+7. Confidence weighted accuracy : 0.649
+8. Training time : 212.394
+9. Nr Epochs : 3000
+
+---------------------------
+
+Model: MC
+Degree: 3
+Mode: polynomial
+Dataset: c)
+Accuracy score of 84.68%
+
+---------------------------
+
+1. Accuracy : 0.694
+2. High confidence (0.8 quantile) accuracy : 0.91
+3. Average confidence (0.5 quantile) accuracy : 0.94
+4. Above worst confidence (0.2 quantile) accuracy : 0.693
+5. Subset acc/conf : 0.951
+6. Full dataset acc/conf : 0.983
+7. Confidence weighted accuracy : 0.629
+8. Training time : 215.539
+9. Nr Epochs : 3000
+
+---------------------------
+
+Model: Mprim
+Degree: 3
+Mode: polynomial
+Dataset: a)
+Accuracy score of 53.15%
+
+---------------------------
+
+1. Accuracy : 0.063
+2. High confidence (0.8 quantile) accuracy : -0.582
+3. Average confidence (0.5 quantile) accuracy : -0.289
+4. Above worst confidence (0.2 quantile) accuracy : nan
+5. Subset acc/conf : 6.905
+6. Full dataset acc/conf : 6.604
+7. Confidence weighted accuracy : -0.003
+8. Training time : 1.208
+9. Nr Epochs : 18
+
+---------------------------
+
+Model: Mprim
+Degree: 3
+Mode: polynomial
+Dataset: b)
+Accuracy score of 95.2%
+
+---------------------------
+
+1. Accuracy : 0.904
+2. High confidence (0.8 quantile) accuracy : 0.97
+3. Average confidence (0.5 quantile) accuracy : 0.964
+4. Above worst confidence (0.2 quantile) accuracy : 0.904
+5. Subset acc/conf : 0.953
+6. Full dataset acc/conf : 0.97
+7. Confidence weighted accuracy : 0.895
+8. Training time : 147.859
+9. Nr Epochs : 2370
+
+---------------------------
+
+Model: Mprim
+Degree: 3
+Mode: polynomial
+Dataset: c)
+Accuracy score of 83.78%
+
+---------------------------
+
+1. Accuracy : 0.676
+2. High confidence (0.8 quantile) accuracy : 1.0
+3. Average confidence (0.5 quantile) accuracy : 0.94
+4. Above worst confidence (0.2 quantile) accuracy : 0.676
+5. Subset acc/conf : 0.805
+6. Full dataset acc/conf : 0.867
+7. Confidence weighted accuracy : 0.698
+8. Training time : 192.444
+9. Nr Epochs : 3000
+
+---------------------------
+
+Model: M
+Degree: 4
+Mode: polynomial_w_coef
+Dataset: a)
+Accuracy score of 97.66%
+
+---------------------------
+
+1. Accuracy : 0.953
+2. High confidence (0.8 quantile) accuracy : None
+3. Average confidence (0.5 quantile) accuracy : None
+4. Above worst confidence (0.2 quantile) accuracy : None
+5. Subset acc/conf : None
+6. Full dataset acc/conf : None
+7. Confidence weighted accuracy : 0.953
+8. Training time : 611.513
+9. Nr Epochs : 1777
+
+---------------------------
+
+Model: M
+Degree: 4
+Mode: polynomial_w_coef
+Dataset: b)
+Accuracy score of 98.86%
+
+---------------------------
+
+1. Accuracy : 0.977
+2. High confidence (0.8 quantile) accuracy : None
+3. Average confidence (0.5 quantile) accuracy : None
+4. Above worst confidence (0.2 quantile) accuracy : None
+5. Subset acc/conf : None
+6. Full dataset acc/conf : None
+7. Confidence weighted accuracy : 0.977
+8. Training time : 68.789
+9. Nr Epochs : 199
+
+---------------------------
+
+Model: M
+Degree: 4
+Mode: polynomial_w_coef
+Dataset: c)
+Accuracy score of 86.02%
+
+---------------------------
+
+1. Accuracy : 0.72
+2. High confidence (0.8 quantile) accuracy : None
+3. Average confidence (0.5 quantile) accuracy : None
+4. Above worst confidence (0.2 quantile) accuracy : None
+5. Subset acc/conf : None
+6. Full dataset acc/conf : None
+7. Confidence weighted accuracy : 0.72
+8. Training time : 291.235
+9. Nr Epochs : 848
+
+---------------------------
+
+Model: M+C
+Degree: 4
+Mode: polynomial_w_coef
+Dataset: a)
+Accuracy score of 97.36%
+
+---------------------------
+
+1. Accuracy : 0.947
+2. High confidence (0.8 quantile) accuracy : 1.0
+3. Average confidence (0.5 quantile) accuracy : 0.989
+4. Above worst confidence (0.2 quantile) accuracy : 0.947
+5. Subset acc/conf : 1.25
+6. Full dataset acc/conf : 1.231
+7. Confidence weighted accuracy : 0.755
+8. Training time : 131.571
+9. Nr Epochs : 220
+
+---------------------------
+
+Model: M+C
+Degree: 4
+Mode: polynomial_w_coef
+Dataset: b)
+Accuracy score of 98.77%
+
+---------------------------
+
+1. Accuracy : 0.975
+2. High confidence (0.8 quantile) accuracy : 0.997
+3. Average confidence (0.5 quantile) accuracy : 0.994
+4. Above worst confidence (0.2 quantile) accuracy : 0.975
+5. Subset acc/conf : 0.98
+6. Full dataset acc/conf : 0.986
+7. Confidence weighted accuracy : 0.979
+8. Training time : 116.212
+9. Nr Epochs : 196
+
+---------------------------
+
+Model: M+C
+Degree: 4
+Mode: polynomial_w_coef
+Dataset: c)
+Accuracy score of 85.51%
+
+---------------------------
+
+1. Accuracy : 0.71
+2. High confidence (0.8 quantile) accuracy : 1.0
+3. Average confidence (0.5 quantile) accuracy : 1.0
+4. Above worst confidence (0.2 quantile) accuracy : 0.711
+5. Subset acc/conf : 1.01
+6. Full dataset acc/conf : 1.01
+7. Confidence weighted accuracy : 0.656
+8. Training time : 810.513
+9. Nr Epochs : 1366
+
+---------------------------
+
+Model: MC
+Degree: 4
+Mode: polynomial_w_coef
+Dataset: a)
+Accuracy score of 97.45%
+
+---------------------------
+
+1. Accuracy : 0.949
+2. High confidence (0.8 quantile) accuracy : 1.0
+3. Average confidence (0.5 quantile) accuracy : 1.0
+4. Above worst confidence (0.2 quantile) accuracy : 0.949
+5. Subset acc/conf : 1.002
+6. Full dataset acc/conf : 0.995
+7. Confidence weighted accuracy : 0.937
+8. Training time : 130.16
+9. Nr Epochs : 192
+
+---------------------------
+
+Model: MC
+Degree: 4
+Mode: polynomial_w_coef
+Dataset: b)
+Accuracy score of 98.8%
+
+---------------------------
+
+1. Accuracy : 0.976
+2. High confidence (0.8 quantile) accuracy : 0.982
+3. Average confidence (0.5 quantile) accuracy : 0.988
+4. Above worst confidence (0.2 quantile) accuracy : 0.976
+5. Subset acc/conf : 0.988
+6. Full dataset acc/conf : 0.999
+7. Confidence weighted accuracy : 0.966
+8. Training time : 185.147
+9. Nr Epochs : 273
+
+---------------------------
+
+Model: MC
+Degree: 4
+Mode: polynomial_w_coef
+Dataset: c)
+Accuracy score of 86.53%
+
+---------------------------
+
+1. Accuracy : 0.731
+2. High confidence (0.8 quantile) accuracy : 1.0
+3. Average confidence (0.5 quantile) accuracy : 0.999
+4. Above worst confidence (0.2 quantile) accuracy : 0.731
+5. Subset acc/conf : 1.007
+6. Full dataset acc/conf : 0.995
+7. Confidence weighted accuracy : 0.688
+8. Training time : 238.213
+9. Nr Epochs : 349
+
+---------------------------
+
+Model: Mprim
+Degree: 4
+Mode: polynomial_w_coef
+Dataset: a)
+Accuracy score of 97.0%
+
+---------------------------
+
+1. Accuracy : 0.94
+2. High confidence (0.8 quantile) accuracy : 0.997
+3. Average confidence (0.5 quantile) accuracy : 0.989
+4. Above worst confidence (0.2 quantile) accuracy : 0.94
+5. Subset acc/conf : 0.972
+6. Full dataset acc/conf : 0.983
+7. Confidence weighted accuracy : 0.929
+8. Training time : 252.539
+9. Nr Epochs : 446
+
+---------------------------
+
+Model: Mprim
+Degree: 4
+Mode: polynomial_w_coef
+Dataset: b)
+Accuracy score of 98.74%
+
+---------------------------
+
+1. Accuracy : 0.975
+2. High confidence (0.8 quantile) accuracy : 0.994
+3. Average confidence (0.5 quantile) accuracy : 0.993
+4. Above worst confidence (0.2 quantile) accuracy : 0.975
+5. Subset acc/conf : 0.987
+6. Full dataset acc/conf : 0.991
+7. Confidence weighted accuracy : 0.972
+8. Training time : 84.077
+9. Nr Epochs : 149
+
+---------------------------
+
+Model: Mprim
+Degree: 4
+Mode: polynomial_w_coef
+Dataset: c)
+Accuracy score of 87.4%
+
+---------------------------
+
+1. Accuracy : 0.748
+2. High confidence (0.8 quantile) accuracy : 1.0
+3. Average confidence (0.5 quantile) accuracy : 0.97
+4. Above worst confidence (0.2 quantile) accuracy : 0.748
+5. Subset acc/conf : 0.956
+6. Full dataset acc/conf : 0.966
+7. Confidence weighted accuracy : 0.717
+8. Training time : 184.228
+9. Nr Epochs : 325
+
+---------------------------
+
+Model: M
+Degree: 4
+Mode: linear
+Dataset: a)
+Accuracy score of 97.48%
+
+---------------------------
+
+1. Accuracy : 0.95
+2. High confidence (0.8 quantile) accuracy : None
+3. Average confidence (0.5 quantile) accuracy : None
+4. Above worst confidence (0.2 quantile) accuracy : None
+5. Subset acc/conf : None
+6. Full dataset acc/conf : None
+7. Confidence weighted accuracy : 0.95
+8. Training time : 24.917
+9. Nr Epochs : 72
+
+---------------------------
+
+Model: M
+Degree: 4
+Mode: linear
+Dataset: b)
+Accuracy score of 98.8%
+
+---------------------------
+
+1. Accuracy : 0.976
+2. High confidence (0.8 quantile) accuracy : None
+3. Average confidence (0.5 quantile) accuracy : None
+4. Above worst confidence (0.2 quantile) accuracy : None
+5. Subset acc/conf : None
+6. Full dataset acc/conf : None
+7. Confidence weighted accuracy : 0.976
+8. Training time : 40.321
+9. Nr Epochs : 117
+
+---------------------------
+
+Model: M
+Degree: 4
+Mode: linear
+Dataset: c)
+Accuracy score of 87.64%
+
+---------------------------
+
+1. Accuracy : 0.753
+2. High confidence (0.8 quantile) accuracy : None
+3. Average confidence (0.5 quantile) accuracy : None
+4. Above worst confidence (0.2 quantile) accuracy : None
+5. Subset acc/conf : None
+6. Full dataset acc/conf : None
+7. Confidence weighted accuracy : 0.753
+8. Training time : 120.668
+9. Nr Epochs : 351
+
+---------------------------
+
+Model: M+C
+Degree: 4
+Mode: linear
+Dataset: a)
+Accuracy score of 98.92%
+
+---------------------------
+
+1. Accuracy : 0.978
+2. High confidence (0.8 quantile) accuracy : 1.0
+3. Average confidence (0.5 quantile) accuracy : 1.0
+4. Above worst confidence (0.2 quantile) accuracy : 0.978
+5. Subset acc/conf : 1.174
+6. Full dataset acc/conf : 1.182
+7. Confidence weighted accuracy : 0.822
+8. Training time : 95.014
+9. Nr Epochs : 160
+
+---------------------------
+
+Model: M+C
+Degree: 4
+Mode: linear
+Dataset: b)
+Accuracy score of 98.68%
+
+---------------------------
+
+1. Accuracy : 0.974
+2. High confidence (0.8 quantile) accuracy : 1.0
+3. Average confidence (0.5 quantile) accuracy : 1.0
+4. Above worst confidence (0.2 quantile) accuracy : 0.974
+5. Subset acc/conf : 1.008
+6. Full dataset acc/conf : 1.016
+7. Confidence weighted accuracy : 0.95
+8. Training time : 64.13
+9. Nr Epochs : 109
+
+---------------------------
+
+Model: M+C
+Degree: 4
+Mode: linear
+Dataset: c)
+Accuracy score of 87.94%
+
+---------------------------
+
+1. Accuracy : 0.759
+2. High confidence (0.8 quantile) accuracy : 1.0
+3. Average confidence (0.5 quantile) accuracy : 1.0
+4. Above worst confidence (0.2 quantile) accuracy : 0.759
+5. Subset acc/conf : 1.029
+6. Full dataset acc/conf : 1.041
+7. Confidence weighted accuracy : 0.683
+8. Training time : 203.292
+9. Nr Epochs : 341
+
+---------------------------
+
+Model: MC
+Degree: 4
+Mode: linear
+Dataset: a)
+Accuracy score of 99.25%
+
+---------------------------
+
+1. Accuracy : 0.985
+2. High confidence (0.8 quantile) accuracy : 1.0
+3. Average confidence (0.5 quantile) accuracy : 1.0
+4. Above worst confidence (0.2 quantile) accuracy : 0.985
+5. Subset acc/conf : 1.009
+6. Full dataset acc/conf : 1.011
+7. Confidence weighted accuracy : 0.971
+8. Training time : 165.989
+9. Nr Epochs : 244
+
+---------------------------
+
+Model: MC
+Degree: 4
+Mode: linear
+Dataset: b)
+Accuracy score of 98.62%
+
+---------------------------
+
+1. Accuracy : 0.972
+2. High confidence (0.8 quantile) accuracy : 1.0
+3. Average confidence (0.5 quantile) accuracy : 1.0
+4. Above worst confidence (0.2 quantile) accuracy : 0.972
+5. Subset acc/conf : 0.978
+6. Full dataset acc/conf : 0.986
+7. Confidence weighted accuracy : 0.976
+8. Training time : 99.175
+9. Nr Epochs : 146
+
+---------------------------
+
+Model: MC
+Degree: 4
+Mode: linear
+Dataset: c)
+Accuracy score of 87.79%
+
+---------------------------
+
+1. Accuracy : 0.756
+2. High confidence (0.8 quantile) accuracy : 1.0
+3. Average confidence (0.5 quantile) accuracy : 1.0
+4. Above worst confidence (0.2 quantile) accuracy : 0.756
+5. Subset acc/conf : 1.007
+6. Full dataset acc/conf : 1.013
+7. Confidence weighted accuracy : 0.7
+8. Training time : 263.801
+9. Nr Epochs : 389
+
+---------------------------
+
+Model: Mprim
+Degree: 4
+Mode: linear
+Dataset: a)
+Accuracy score of 99.22%
+
+---------------------------
+
+1. Accuracy : 0.984
+2. High confidence (0.8 quantile) accuracy : 1.0
+3. Average confidence (0.5 quantile) accuracy : 1.0
+4. Above worst confidence (0.2 quantile) accuracy : 0.984
+5. Subset acc/conf : 0.989
+6. Full dataset acc/conf : 0.992
+7. Confidence weighted accuracy : 0.986
+8. Training time : 79.509
+9. Nr Epochs : 139
+
+---------------------------
+
+Model: Mprim
+Degree: 4
+Mode: linear
+Dataset: b)
+Accuracy score of 98.77%
+
+---------------------------
+
+1. Accuracy : 0.975
+2. High confidence (0.8 quantile) accuracy : 1.0
+3. Average confidence (0.5 quantile) accuracy : 0.998
+4. Above worst confidence (0.2 quantile) accuracy : 0.975
+5. Subset acc/conf : 1.034
+6. Full dataset acc/conf : 1.027
+7. Confidence weighted accuracy : 0.939
+8. Training time : 91.058
+9. Nr Epochs : 162
+
+---------------------------
+
+Model: Mprim
+Degree: 4
+Mode: linear
+Dataset: c)
+Accuracy score of 87.46%
+
+---------------------------
+
+1. Accuracy : 0.749
+2. High confidence (0.8 quantile) accuracy : 1.0
+3. Average confidence (0.5 quantile) accuracy : 1.0
+4. Above worst confidence (0.2 quantile) accuracy : 0.749
+5. Subset acc/conf : 0.975
+6. Full dataset acc/conf : 0.983
+7. Confidence weighted accuracy : 0.705
+8. Training time : 243.99
+9. Nr Epochs : 432
+
+---------------------------
+
+Model: M
+Degree: 4
+Mode: polynomial
+Dataset: a)
+Accuracy score of 97.96%
+
+---------------------------
+
+1. Accuracy : 0.959
+2. High confidence (0.8 quantile) accuracy : None
+3. Average confidence (0.5 quantile) accuracy : None
+4. Above worst confidence (0.2 quantile) accuracy : None
+5. Subset acc/conf : None
+6. Full dataset acc/conf : None
+7. Confidence weighted accuracy : 0.959
+8. Training time : 172.341
+9. Nr Epochs : 500
+
+---------------------------
+
+Model: M
+Degree: 4
+Mode: polynomial
+Dataset: b)
+Accuracy score of 99.16%
+
+---------------------------
+
+1. Accuracy : 0.983
+2. High confidence (0.8 quantile) accuracy : None
+3. Average confidence (0.5 quantile) accuracy : None
+4. Above worst confidence (0.2 quantile) accuracy : None
+5. Subset acc/conf : None
+6. Full dataset acc/conf : None
+7. Confidence weighted accuracy : 0.983
+8. Training time : 67.521
+9. Nr Epochs : 194
+
+---------------------------
+
+Model: M
+Degree: 4
+Mode: polynomial
+Dataset: c)
+Accuracy score of 88.12%
+
+---------------------------
+
+1. Accuracy : 0.762
+2. High confidence (0.8 quantile) accuracy : None
+3. Average confidence (0.5 quantile) accuracy : None
+4. Above worst confidence (0.2 quantile) accuracy : None
+5. Subset acc/conf : None
+6. Full dataset acc/conf : None
+7. Confidence weighted accuracy : 0.762
+8. Training time : 392.254
+9. Nr Epochs : 1140
+
+---------------------------
+
+Model: M+C
+Degree: 4
+Mode: polynomial
+Dataset: a)
+Accuracy score of 97.66%
+
+---------------------------
+
+1. Accuracy : 0.953
+2. High confidence (0.8 quantile) accuracy : 0.985
+3. Average confidence (0.5 quantile) accuracy : 0.983
+4. Above worst confidence (0.2 quantile) accuracy : 0.953
+5. Subset acc/conf : 0.997
+6. Full dataset acc/conf : 0.997
+7. Confidence weighted accuracy : 0.938
+8. Training time : 163.797
+9. Nr Epochs : 277
+
+---------------------------
+
+Model: M+C
+Degree: 4
+Mode: polynomial
+Dataset: b)
+Accuracy score of 99.49%
+
+---------------------------
+
+1. Accuracy : 0.99
+2. High confidence (0.8 quantile) accuracy : 1.0
+3. Average confidence (0.5 quantile) accuracy : 0.996
+4. Above worst confidence (0.2 quantile) accuracy : 0.99
+5. Subset acc/conf : 1.006
+6. Full dataset acc/conf : 1.005
+7. Confidence weighted accuracy : 0.981
+8. Training time : 190.271
+9. Nr Epochs : 321
+
+---------------------------
+
+Model: M+C
+Degree: 4
+Mode: polynomial
+Dataset: c)
+Accuracy score of 87.4%
+
+---------------------------
+
+1. Accuracy : 0.748
+2. High confidence (0.8 quantile) accuracy : 0.892
+3. Average confidence (0.5 quantile) accuracy : 0.942
+4. Above worst confidence (0.2 quantile) accuracy : 0.748
+5. Subset acc/conf : 1.08
+6. Full dataset acc/conf : 1.076
+7. Confidence weighted accuracy : 0.64
+8. Training time : 1003.011
+9. Nr Epochs : 1698
+
+---------------------------
+
+Model: MC
+Degree: 4
+Mode: polynomial
+Dataset: a)
+Accuracy score of 97.69%
+
+---------------------------
+
+1. Accuracy : 0.954
+2. High confidence (0.8 quantile) accuracy : 1.0
+3. Average confidence (0.5 quantile) accuracy : 1.0
+4. Above worst confidence (0.2 quantile) accuracy : 0.954
+5. Subset acc/conf : 0.978
+6. Full dataset acc/conf : 0.976
+7. Confidence weighted accuracy : 0.958
+8. Training time : 430.051
+9. Nr Epochs : 634
+
+---------------------------
+
+Model: MC
+Degree: 4
+Mode: polynomial
+Dataset: b)
+Accuracy score of 99.07%
+
+---------------------------
+
+1. Accuracy : 0.981
+2. High confidence (0.8 quantile) accuracy : 1.0
+3. Average confidence (0.5 quantile) accuracy : 1.0
+4. Above worst confidence (0.2 quantile) accuracy : 0.981
+5. Subset acc/conf : 1.02
+6. Full dataset acc/conf : 1.015
+7. Confidence weighted accuracy : 0.963
+8. Training time : 267.747
+9. Nr Epochs : 396
+
+---------------------------
+
+Model: MC
+Degree: 4
+Mode: polynomial
+Dataset: c)
+Accuracy score of 87.25%
+
+---------------------------
+
+1. Accuracy : 0.745
+2. High confidence (0.8 quantile) accuracy : 0.994
+3. Average confidence (0.5 quantile) accuracy : 0.965
+4. Above worst confidence (0.2 quantile) accuracy : 0.745
+5. Subset acc/conf : 0.936
+6. Full dataset acc/conf : 0.94
+7. Confidence weighted accuracy : 0.728
+8. Training time : 623.383
+9. Nr Epochs : 919
+
+---------------------------
+
+Model: Mprim
+Degree: 4
+Mode: polynomial
+Dataset: a)
+Accuracy score of 97.33%
+
+---------------------------
+
+1. Accuracy : 0.947
+2. High confidence (0.8 quantile) accuracy : 1.0
+3. Average confidence (0.5 quantile) accuracy : 0.988
+4. Above worst confidence (0.2 quantile) accuracy : 0.947
+5. Subset acc/conf : 0.977
+6. Full dataset acc/conf : 0.981
+7. Confidence weighted accuracy : 0.943
+8. Training time : 386.688
+9. Nr Epochs : 685
+
+---------------------------
+
+Model: Mprim
+Degree: 4
+Mode: polynomial
+Dataset: b)
+Accuracy score of 99.13%
+
+---------------------------
+
+1. Accuracy : 0.983
+2. High confidence (0.8 quantile) accuracy : 1.0
+3. Average confidence (0.5 quantile) accuracy : 1.0
+4. Above worst confidence (0.2 quantile) accuracy : 0.983
+5. Subset acc/conf : 1.006
+6. Full dataset acc/conf : 1.009
+7. Confidence weighted accuracy : 0.967
+8. Training time : 74.156
+9. Nr Epochs : 132
+
+---------------------------
+
+Model: Mprim
+Degree: 4
+Mode: polynomial
+Dataset: c)
+Accuracy score of 87.64%
+
+---------------------------
+
+1. Accuracy : 0.753
+2. High confidence (0.8 quantile) accuracy : 1.0
+3. Average confidence (0.5 quantile) accuracy : 0.996
+4. Above worst confidence (0.2 quantile) accuracy : 0.753
+5. Subset acc/conf : 1.034
+6. Full dataset acc/conf : 1.036
+7. Confidence weighted accuracy : 0.693
+8. Training time : 252.089
+9. Nr Epochs : 445
+
+---------------------------
+
+Model: M
+Degree: 5
+Mode: polynomial_w_coef
+Dataset: a)
+Accuracy score of 99.11%
+
+---------------------------
+
+1. Accuracy : 0.982
+2. High confidence (0.8 quantile) accuracy : None
+3. Average confidence (0.5 quantile) accuracy : None
+4. Above worst confidence (0.2 quantile) accuracy : None
+5. Subset acc/conf : None
+6. Full dataset acc/conf : None
+7. Confidence weighted accuracy : 0.982
+8. Training time : 51.894
+9. Nr Epochs : 50
+
+---------------------------
+
+Model: M
+Degree: 5
+Mode: polynomial_w_coef
+Dataset: b)
+Accuracy score of 98.58%
+
+---------------------------
+
+1. Accuracy : 0.972
+2. High confidence (0.8 quantile) accuracy : None
+3. Average confidence (0.5 quantile) accuracy : None
+4. Above worst confidence (0.2 quantile) accuracy : None
+5. Subset acc/conf : None
+6. Full dataset acc/conf : None
+7. Confidence weighted accuracy : 0.972
+8. Training time : 66.622
+9. Nr Epochs : 64
+
+---------------------------
+
+Model: M
+Degree: 5
+Mode: polynomial_w_coef
+Dataset: c)
+Accuracy score of 88.45%
+
+---------------------------
+
+1. Accuracy : 0.769
+2. High confidence (0.8 quantile) accuracy : None
+3. Average confidence (0.5 quantile) accuracy : None
+4. Above worst confidence (0.2 quantile) accuracy : None
+5. Subset acc/conf : None
+6. Full dataset acc/conf : None
+7. Confidence weighted accuracy : 0.769
+8. Training time : 1258.044
+9. Nr Epochs : 1210
+
+---------------------------
+
+Model: M+C
+Degree: 5
+Mode: polynomial_w_coef
+Dataset: a)
+Accuracy score of 99.04%
+
+---------------------------
+
+1. Accuracy : 0.981
+2. High confidence (0.8 quantile) accuracy : 0.999
+3. Average confidence (0.5 quantile) accuracy : 0.999
+4. Above worst confidence (0.2 quantile) accuracy : 0.981
+5. Subset acc/conf : 0.991
+6. Full dataset acc/conf : 0.99
+7. Confidence weighted accuracy : 0.984
+8. Training time : 152.227
+9. Nr Epochs : 84
+
+---------------------------
+
+Model: M+C
+Degree: 5
+Mode: polynomial_w_coef
+Dataset: b)
+Accuracy score of 98.06%
+
+---------------------------
+
+1. Accuracy : 0.961
+2. High confidence (0.8 quantile) accuracy : 0.999
+3. Average confidence (0.5 quantile) accuracy : 0.999
+4. Above worst confidence (0.2 quantile) accuracy : 0.961
+5. Subset acc/conf : 0.977
+6. Full dataset acc/conf : 0.978
+7. Confidence weighted accuracy : 0.967
+8. Training time : 95.66
+9. Nr Epochs : 53
+
+---------------------------
+
+Model: M+C
+Degree: 5
+Mode: polynomial_w_coef
+Dataset: c)
+Accuracy score of 88.51%
+
+---------------------------
+
+1. Accuracy : 0.77
+2. High confidence (0.8 quantile) accuracy : 0.994
+3. Average confidence (0.5 quantile) accuracy : 0.998
+4. Above worst confidence (0.2 quantile) accuracy : 0.771
+5. Subset acc/conf : 1.025
+6. Full dataset acc/conf : 1.009
+7. Confidence weighted accuracy : 0.724
+8. Training time : 2021.343
+9. Nr Epochs : 1126
+
+---------------------------
+
+Model: MC
+Degree: 5
+Mode: polynomial_w_coef
+Dataset: a)
+Accuracy score of 99.03%
+
+---------------------------
+
+1. Accuracy : 0.981
+2. High confidence (0.8 quantile) accuracy : 1.0
+3. Average confidence (0.5 quantile) accuracy : 1.0
+4. Above worst confidence (0.2 quantile) accuracy : 0.981
+5. Subset acc/conf : 0.991
+6. Full dataset acc/conf : 0.995
+7. Confidence weighted accuracy : 0.979
+8. Training time : 135.505
+9. Nr Epochs : 66
+
+---------------------------
+
+Model: MC
+Degree: 5
+Mode: polynomial_w_coef
+Dataset: b)
+Accuracy score of 98.02%
+
+---------------------------
+
+1. Accuracy : 0.96
+2. High confidence (0.8 quantile) accuracy : 0.999
+3. Average confidence (0.5 quantile) accuracy : 0.998
+4. Above worst confidence (0.2 quantile) accuracy : 0.96
+5. Subset acc/conf : 1.014
+6. Full dataset acc/conf : 1.014
+7. Confidence weighted accuracy : 0.932
+8. Training time : 126.144
+9. Nr Epochs : 61
+
+---------------------------
+
+Model: MC
+Degree: 5
+Mode: polynomial_w_coef
+Dataset: c)
+Accuracy score of 88.42%
+
+---------------------------
+
+1. Accuracy : 0.768
+2. High confidence (0.8 quantile) accuracy : 1.0
+3. Average confidence (0.5 quantile) accuracy : 0.999
+4. Above worst confidence (0.2 quantile) accuracy : 0.769
+5. Subset acc/conf : 0.998
+6. Full dataset acc/conf : 0.998
+7. Confidence weighted accuracy : 0.729
+8. Training time : 3210.732
+9. Nr Epochs : 1516
+
+---------------------------
+
+Model: Mprim
+Degree: 5
+Mode: polynomial_w_coef
+Dataset: a)
+Accuracy score of 99.04%
+
+---------------------------
+
+1. Accuracy : 0.981
+2. High confidence (0.8 quantile) accuracy : 1.0
+3. Average confidence (0.5 quantile) accuracy : 1.0
+4. Above worst confidence (0.2 quantile) accuracy : 0.981
+5. Subset acc/conf : 0.999
+6. Full dataset acc/conf : 0.997
+7. Confidence weighted accuracy : 0.975
+8. Training time : 83.545
+9. Nr Epochs : 48
+
+---------------------------
+
+Model: Mprim
+Degree: 5
+Mode: polynomial_w_coef
+Dataset: b)
+Accuracy score of 98.43%
+
+---------------------------
+
+1. Accuracy : 0.969
+2. High confidence (0.8 quantile) accuracy : 0.999
+3. Average confidence (0.5 quantile) accuracy : 0.996
+4. Above worst confidence (0.2 quantile) accuracy : 0.969
+5. Subset acc/conf : 1.012
+6. Full dataset acc/conf : 1.012
+7. Confidence weighted accuracy : 0.945
+8. Training time : 62.953
+9. Nr Epochs : 36
+
+---------------------------
+
+Model: Mprim
+Degree: 5
+Mode: polynomial_w_coef
+Dataset: c)
+Accuracy score of 88.27%
+
+---------------------------
+
+1. Accuracy : 0.765
+2. High confidence (0.8 quantile) accuracy : 1.0
+3. Average confidence (0.5 quantile) accuracy : 0.999
+4. Above worst confidence (0.2 quantile) accuracy : 0.765
+5. Subset acc/conf : 1.025
+6. Full dataset acc/conf : 1.029
+7. Confidence weighted accuracy : 0.699
+8. Training time : 1979.174
+9. Nr Epochs : 1156
+
+---------------------------
+
+Model: M
+Degree: 5
+Mode: linear
+Dataset: a)
+Accuracy score of 98.68%
+
+---------------------------
+
+1. Accuracy : 0.974
+2. High confidence (0.8 quantile) accuracy : None
+3. Average confidence (0.5 quantile) accuracy : None
+4. Above worst confidence (0.2 quantile) accuracy : None
+5. Subset acc/conf : None
+6. Full dataset acc/conf : None
+7. Confidence weighted accuracy : 0.974
+8. Training time : 157.077
+9. Nr Epochs : 152
+
+---------------------------
+
+Model: M
+Degree: 5
+Mode: linear
+Dataset: b)
+Accuracy score of 98.05%
+
+---------------------------
+
+1. Accuracy : 0.961
+2. High confidence (0.8 quantile) accuracy : None
+3. Average confidence (0.5 quantile) accuracy : None
+4. Above worst confidence (0.2 quantile) accuracy : None
+5. Subset acc/conf : None
+6. Full dataset acc/conf : None
+7. Confidence weighted accuracy : 0.961
+8. Training time : 85.684
+9. Nr Epochs : 82
+
+---------------------------
+
+Model: M
+Degree: 5
+Mode: linear
+Dataset: c)
+Accuracy score of 87.13%
+
+---------------------------
+
+1. Accuracy : 0.743
+2. High confidence (0.8 quantile) accuracy : None
+3. Average confidence (0.5 quantile) accuracy : None
+4. Above worst confidence (0.2 quantile) accuracy : None
+5. Subset acc/conf : None
+6. Full dataset acc/conf : None
+7. Confidence weighted accuracy : 0.743
+8. Training time : 536.655
+9. Nr Epochs : 517
+
+---------------------------
+
+Model: M+C
+Degree: 5
+Mode: linear
+Dataset: a)
+Accuracy score of 97.9%
+
+---------------------------
+
+1. Accuracy : 0.958
+2. High confidence (0.8 quantile) accuracy : 1.0
+3. Average confidence (0.5 quantile) accuracy : 1.0
+4. Above worst confidence (0.2 quantile) accuracy : 0.958
+5. Subset acc/conf : 1.003
+6. Full dataset acc/conf : 1.0
+7. Confidence weighted accuracy : 0.951
+8. Training time : 322.514
+9. Nr Epochs : 179
+
+---------------------------
+
+Model: M+C
+Degree: 5
+Mode: linear
+Dataset: b)
+Accuracy score of 98.22%
+
+---------------------------
+
+1. Accuracy : 0.964
+2. High confidence (0.8 quantile) accuracy : 1.0
+3. Average confidence (0.5 quantile) accuracy : 1.0
+4. Above worst confidence (0.2 quantile) accuracy : 0.964
+5. Subset acc/conf : 1.028
+6. Full dataset acc/conf : 1.029
+7. Confidence weighted accuracy : 0.929
+8. Training time : 136.51
+9. Nr Epochs : 76
+
+---------------------------
+
+Model: M+C
+Degree: 5
+Mode: linear
+Dataset: c)
+Accuracy score of 86.98%
+
+---------------------------
+
+1. Accuracy : 0.74
+2. High confidence (0.8 quantile) accuracy : 1.0
+3. Average confidence (0.5 quantile) accuracy : 1.0
+4. Above worst confidence (0.2 quantile) accuracy : 0.741
+5. Subset acc/conf : 1.022
+6. Full dataset acc/conf : 1.016
+7. Confidence weighted accuracy : 0.682
+8. Training time : 755.977
+9. Nr Epochs : 422
+
+---------------------------
+
+Model: MC
+Degree: 5
+Mode: linear
+Dataset: a)
+Accuracy score of 97.48%
+
+---------------------------
+
+1. Accuracy : 0.95
+2. High confidence (0.8 quantile) accuracy : 1.0
+3. Average confidence (0.5 quantile) accuracy : 1.0
+4. Above worst confidence (0.2 quantile) accuracy : 0.95
+5. Subset acc/conf : 1.017
+6. Full dataset acc/conf : 1.017
+7. Confidence weighted accuracy : 0.925
+8. Training time : 359.045
+9. Nr Epochs : 175
+
+---------------------------
+
+Model: MC
+Degree: 5
+Mode: linear
+Dataset: b)
+Accuracy score of 98.5%
+
+---------------------------
+
+1. Accuracy : 0.97
+2. High confidence (0.8 quantile) accuracy : 1.0
+3. Average confidence (0.5 quantile) accuracy : 1.0
+4. Above worst confidence (0.2 quantile) accuracy : 0.97
+5. Subset acc/conf : 0.998
+6. Full dataset acc/conf : 1.0
+7. Confidence weighted accuracy : 0.962
+8. Training time : 188.293
+9. Nr Epochs : 91
+
+---------------------------
+
+Model: MC
+Degree: 5
+Mode: linear
+Dataset: c)
+Accuracy score of 86.96%
+
+---------------------------
+
+1. Accuracy : 0.739
+2. High confidence (0.8 quantile) accuracy : 1.0
+3. Average confidence (0.5 quantile) accuracy : 1.0
+4. Above worst confidence (0.2 quantile) accuracy : 0.749
+5. Subset acc/conf : 1.02
+6. Full dataset acc/conf : 1.02
+7. Confidence weighted accuracy : 0.682
+8. Training time : 649.652
+9. Nr Epochs : 314
+
+---------------------------
+
+Model: Mprim
+Degree: 5
+Mode: linear
+Dataset: a)
+Accuracy score of 97.75%
+
+---------------------------
+
+1. Accuracy : 0.955
+2. High confidence (0.8 quantile) accuracy : 1.0
+3. Average confidence (0.5 quantile) accuracy : 1.0
+4. Above worst confidence (0.2 quantile) accuracy : 0.955
+5. Subset acc/conf : 0.98
+6. Full dataset acc/conf : 0.981
+7. Confidence weighted accuracy : 0.96
+8. Training time : 291.541
+9. Nr Epochs : 170
+
+---------------------------
+
+Model: Mprim
+Degree: 5
+Mode: linear
+Dataset: b)
+Accuracy score of 98.54%
+
+---------------------------
+
+1. Accuracy : 0.971
+2. High confidence (0.8 quantile) accuracy : 1.0
+3. Average confidence (0.5 quantile) accuracy : 1.0
+4. Above worst confidence (0.2 quantile) accuracy : 0.971
+5. Subset acc/conf : 0.968
+6. Full dataset acc/conf : 0.968
+7. Confidence weighted accuracy : 0.993
+8. Training time : 174.016
+9. Nr Epochs : 102
+
+---------------------------
+
+Model: Mprim
+Degree: 5
+Mode: linear
+Dataset: c)
+Accuracy score of 87.25%
+
+---------------------------
+
+1. Accuracy : 0.745
+2. High confidence (0.8 quantile) accuracy : 1.0
+3. Average confidence (0.5 quantile) accuracy : 1.0
+4. Above worst confidence (0.2 quantile) accuracy : 0.745
+5. Subset acc/conf : 1.031
+6. Full dataset acc/conf : 1.024
+7. Confidence weighted accuracy : 0.679
+8. Training time : 342.018
+9. Nr Epochs : 200
+
+---------------------------
+
+Model: M
+Degree: 5
+Mode: polynomial
+Dataset: a)
+Accuracy score of 98.38%
+
+---------------------------
+
+1. Accuracy : 0.968
+2. High confidence (0.8 quantile) accuracy : None
+3. Average confidence (0.5 quantile) accuracy : None
+4. Above worst confidence (0.2 quantile) accuracy : None
+5. Subset acc/conf : None
+6. Full dataset acc/conf : None
+7. Confidence weighted accuracy : 0.968
+8. Training time : 41.759
+9. Nr Epochs : 40
+
+---------------------------
+
+Model: M
+Degree: 5
+Mode: polynomial
+Dataset: b)
+Accuracy score of 99.12%
+
+---------------------------
+
+1. Accuracy : 0.982
+2. High confidence (0.8 quantile) accuracy : None
+3. Average confidence (0.5 quantile) accuracy : None
+4. Above worst confidence (0.2 quantile) accuracy : None
+5. Subset acc/conf : None
+6. Full dataset acc/conf : None
+7. Confidence weighted accuracy : 0.982
+8. Training time : 66.317
+9. Nr Epochs : 64
+
+---------------------------
+
+Model: M
+Degree: 5
+Mode: polynomial
+Dataset: c)
+Accuracy score of 88.5%
+
+---------------------------
+
+1. Accuracy : 0.77
+2. High confidence (0.8 quantile) accuracy : None
+3. Average confidence (0.5 quantile) accuracy : None
+4. Above worst confidence (0.2 quantile) accuracy : None
+5. Subset acc/conf : None
+6. Full dataset acc/conf : None
+7. Confidence weighted accuracy : 0.77
+8. Training time : 1381.436
+9. Nr Epochs : 1325
+
+---------------------------
+
+Model: M+C
+Degree: 5
+Mode: polynomial
+Dataset: a)
+Accuracy score of 98.21%
+
+---------------------------
+
+1. Accuracy : 0.964
+2. High confidence (0.8 quantile) accuracy : 1.0
+3. Average confidence (0.5 quantile) accuracy : 0.999
+4. Above worst confidence (0.2 quantile) accuracy : 0.964
+5. Subset acc/conf : 0.985
+6. Full dataset acc/conf : 0.985
+7. Confidence weighted accuracy : 0.965
+8. Training time : 87.182
+9. Nr Epochs : 49
+
+---------------------------
+
+Model: M+C
+Degree: 5
+Mode: polynomial
+Dataset: b)
+Accuracy score of 99.03%
+
+---------------------------
+
+1. Accuracy : 0.981
+2. High confidence (0.8 quantile) accuracy : 0.997
+3. Average confidence (0.5 quantile) accuracy : 0.998
+4. Above worst confidence (0.2 quantile) accuracy : 0.981
+5. Subset acc/conf : 1.002
+6. Full dataset acc/conf : 1.003
+7. Confidence weighted accuracy : 0.97
+8. Training time : 182.341
+9. Nr Epochs : 101
+
+---------------------------
+
+Model: M+C
+Degree: 5
+Mode: polynomial
+Dataset: c)
+Accuracy score of 87.86%
+
+---------------------------
+
+1. Accuracy : 0.757
+2. High confidence (0.8 quantile) accuracy : 1.0
+3. Average confidence (0.5 quantile) accuracy : 0.999
+4. Above worst confidence (0.2 quantile) accuracy : 0.758
+5. Subset acc/conf : 1.031
+6. Full dataset acc/conf : 1.019
+7. Confidence weighted accuracy : 0.703
+8. Training time : 2478.104
+9. Nr Epochs : 1385
+
+---------------------------
+
+Model: MC
+Degree: 5
+Mode: polynomial
+Dataset: a)
+Accuracy score of 98.94%
+
+---------------------------
+
+1. Accuracy : 0.979
+2. High confidence (0.8 quantile) accuracy : 1.0
+3. Average confidence (0.5 quantile) accuracy : 1.0
+4. Above worst confidence (0.2 quantile) accuracy : 0.979
+5. Subset acc/conf : 0.994
+6. Full dataset acc/conf : 0.992
+7. Confidence weighted accuracy : 0.98
+8. Training time : 166.859
+9. Nr Epochs : 81
+
+---------------------------
+
+Model: MC
+Degree: 5
+Mode: polynomial
+Dataset: b)
+Accuracy score of 99.29%
+
+---------------------------
+
+1. Accuracy : 0.986
+2. High confidence (0.8 quantile) accuracy : 1.0
+3. Average confidence (0.5 quantile) accuracy : 1.0
+4. Above worst confidence (0.2 quantile) accuracy : 0.986
+5. Subset acc/conf : 0.984
+6. Full dataset acc/conf : 0.983
+7. Confidence weighted accuracy : 0.997
+8. Training time : 121.694
+9. Nr Epochs : 59
+
+---------------------------
+
+Model: MC
+Degree: 5
+Mode: polynomial
+Dataset: c)
+Accuracy score of 87.23%
+
+---------------------------
+
+1. Accuracy : 0.745
+2. High confidence (0.8 quantile) accuracy : 0.997
+3. Average confidence (0.5 quantile) accuracy : 0.996
+4. Above worst confidence (0.2 quantile) accuracy : 0.745
+5. Subset acc/conf : 0.992
+6. Full dataset acc/conf : 0.987
+7. Confidence weighted accuracy : 0.709
+8. Training time : 3444.958
+9. Nr Epochs : 1671
+
+---------------------------
+
+Model: Mprim
+Degree: 5
+Mode: polynomial
+Dataset: a)
+Accuracy score of 98.36%
+
+---------------------------
+
+1. Accuracy : 0.967
+2. High confidence (0.8 quantile) accuracy : 1.0
+3. Average confidence (0.5 quantile) accuracy : 0.999
+4. Above worst confidence (0.2 quantile) accuracy : 0.967
+5. Subset acc/conf : 0.991
+6. Full dataset acc/conf : 0.988
+7. Confidence weighted accuracy : 0.964
+8. Training time : 108.227
+9. Nr Epochs : 63
+
+---------------------------
+
+Model: Mprim
+Degree: 5
+Mode: polynomial
+Dataset: b)
+Accuracy score of 98.78%
+
+---------------------------
+
+1. Accuracy : 0.976
+2. High confidence (0.8 quantile) accuracy : 1.0
+3. Average confidence (0.5 quantile) accuracy : 0.998
+4. Above worst confidence (0.2 quantile) accuracy : 0.976
+5. Subset acc/conf : 1.099
+6. Full dataset acc/conf : 1.096
+7. Confidence weighted accuracy : 0.88
+8. Training time : 95.425
+9. Nr Epochs : 56
+
+---------------------------
+
+Model: Mprim
+Degree: 5
+Mode: polynomial
+Dataset: c)
+Accuracy score of 87.52%
+
+---------------------------
+
+1. Accuracy : 0.75
+2. High confidence (0.8 quantile) accuracy : 1.0
+3. Average confidence (0.5 quantile) accuracy : 1.0
+4. Above worst confidence (0.2 quantile) accuracy : 0.751
+5. Subset acc/conf : 1.043
+6. Full dataset acc/conf : 1.039
+7. Confidence weighted accuracy : 0.698
+8. Training time : 1581.409
+9. Nr Epochs : 890
+
+---------------------------
+
+Model: M
+Degree: 6
+Mode: polynomial_w_coef
+Dataset: a)
+Accuracy score of 98.92%
+
+---------------------------
+
+1. Accuracy : 0.978
+2. High confidence (0.8 quantile) accuracy : None
+3. Average confidence (0.5 quantile) accuracy : None
+4. Above worst confidence (0.2 quantile) accuracy : None
+5. Subset acc/conf : None
+6. Full dataset acc/conf : None
+7. Confidence weighted accuracy : 0.978
+8. Training time : 105.882
+9. Nr Epochs : 101
+
+---------------------------
+
+Model: M
+Degree: 6
+Mode: polynomial_w_coef
+Dataset: b)
+Accuracy score of 98.97%
+
+---------------------------
+
+1. Accuracy : 0.979
+2. High confidence (0.8 quantile) accuracy : None
+3. Average confidence (0.5 quantile) accuracy : None
+4. Above worst confidence (0.2 quantile) accuracy : None
+5. Subset acc/conf : None
+6. Full dataset acc/conf : None
+7. Confidence weighted accuracy : 0.979
+8. Training time : 109.256
+9. Nr Epochs : 104
+
+---------------------------
+
+Model: M
+Degree: 6
+Mode: polynomial_w_coef
+Dataset: c)
+Accuracy score of 88.57%
+
+---------------------------
+
+1. Accuracy : 0.771
+2. High confidence (0.8 quantile) accuracy : None
+3. Average confidence (0.5 quantile) accuracy : None
+4. Above worst confidence (0.2 quantile) accuracy : None
+5. Subset acc/conf : None
+6. Full dataset acc/conf : None
+7. Confidence weighted accuracy : 0.771
+8. Training time : 775.823
+9. Nr Epochs : 743
+
+---------------------------
+
+Model: M+C
+Degree: 6
+Mode: polynomial_w_coef
+Dataset: a)
+Accuracy score of 98.88%
+
+---------------------------
+
+1. Accuracy : 0.978
+2. High confidence (0.8 quantile) accuracy : 1.0
+3. Average confidence (0.5 quantile) accuracy : 1.0
+4. Above worst confidence (0.2 quantile) accuracy : 0.978
+5. Subset acc/conf : 1.003
+6. Full dataset acc/conf : 1.005
+7. Confidence weighted accuracy : 0.967
+8. Training time : 161.101
+9. Nr Epochs : 90
+
+---------------------------
+
+Model: M+C
+Degree: 6
+Mode: polynomial_w_coef
+Dataset: b)
+Accuracy score of 99.19%
+
+---------------------------
+
+1. Accuracy : 0.984
+2. High confidence (0.8 quantile) accuracy : 1.0
+3. Average confidence (0.5 quantile) accuracy : 1.0
+4. Above worst confidence (0.2 quantile) accuracy : 0.984
+5. Subset acc/conf : 0.995
+6. Full dataset acc/conf : 0.994
+7. Confidence weighted accuracy : 0.986
+8. Training time : 173.893
+9. Nr Epochs : 96
+
+---------------------------
+
+Model: M+C
+Degree: 6
+Mode: polynomial_w_coef
+Dataset: c)
+Accuracy score of 88.3%
+
+---------------------------
+
+1. Accuracy : 0.766
+2. High confidence (0.8 quantile) accuracy : 0.993
+3. Average confidence (0.5 quantile) accuracy : 0.996
+4. Above worst confidence (0.2 quantile) accuracy : 0.767
+5. Subset acc/conf : 1.014
+6. Full dataset acc/conf : 1.015
+7. Confidence weighted accuracy : 0.719
+8. Training time : 1839.265
+9. Nr Epochs : 1024
+
+---------------------------
+
+Model: MC
+Degree: 6
+Mode: polynomial_w_coef
+Dataset: a)
+Accuracy score of 98.89%
+
+---------------------------
+
+1. Accuracy : 0.978
+2. High confidence (0.8 quantile) accuracy : 1.0
+3. Average confidence (0.5 quantile) accuracy : 1.0
+4. Above worst confidence (0.2 quantile) accuracy : 0.978
+5. Subset acc/conf : 0.995
+6. Full dataset acc/conf : 0.997
+7. Confidence weighted accuracy : 0.974
+8. Training time : 166.587
+9. Nr Epochs : 80
+
+---------------------------
+
+Model: MC
+Degree: 6
+Mode: polynomial_w_coef
+Dataset: b)
+Accuracy score of 98.96%
+
+---------------------------
+
+1. Accuracy : 0.979
+2. High confidence (0.8 quantile) accuracy : 0.999
+3. Average confidence (0.5 quantile) accuracy : 1.0
+4. Above worst confidence (0.2 quantile) accuracy : 0.979
+5. Subset acc/conf : 0.992
+6. Full dataset acc/conf : 0.991
+7. Confidence weighted accuracy : 0.981
+8. Training time : 278.057
+9. Nr Epochs : 134
+
+---------------------------
+
+Model: MC
+Degree: 6
+Mode: polynomial_w_coef
+Dataset: c)
+Accuracy score of 88.03%
+
+---------------------------
+
+1. Accuracy : 0.761
+2. High confidence (0.8 quantile) accuracy : 0.999
+3. Average confidence (0.5 quantile) accuracy : 0.999
+4. Above worst confidence (0.2 quantile) accuracy : 0.761
+5. Subset acc/conf : 0.99
+6. Full dataset acc/conf : 0.988
+7. Confidence weighted accuracy : 0.727
+8. Training time : 1635.044
+9. Nr Epochs : 786
+
+---------------------------
+
+Model: Mprim
+Degree: 6
+Mode: polynomial_w_coef
+Dataset: a)
+Accuracy score of 98.92%
+
+---------------------------
+
+1. Accuracy : 0.978
+2. High confidence (0.8 quantile) accuracy : 1.0
+3. Average confidence (0.5 quantile) accuracy : 1.0
+4. Above worst confidence (0.2 quantile) accuracy : 0.978
+5. Subset acc/conf : 0.995
+6. Full dataset acc/conf : 0.994
+7. Confidence weighted accuracy : 0.976
+8. Training time : 212.729
+9. Nr Epochs : 124
+
+---------------------------
+
+Model: Mprim
+Degree: 6
+Mode: polynomial_w_coef
+Dataset: b)
+Accuracy score of 99.09%
+
+---------------------------
+
+1. Accuracy : 0.982
+2. High confidence (0.8 quantile) accuracy : 1.0
+3. Average confidence (0.5 quantile) accuracy : 1.0
+4. Above worst confidence (0.2 quantile) accuracy : 0.982
+5. Subset acc/conf : 1.019
+6. Full dataset acc/conf : 1.019
+7. Confidence weighted accuracy : 0.957
+8. Training time : 125.356
+9. Nr Epochs : 73
+
+---------------------------
+
+Model: Mprim
+Degree: 6
+Mode: polynomial_w_coef
+Dataset: c)
+Accuracy score of 88.34%
+
+---------------------------
+
+1. Accuracy : 0.767
+2. High confidence (0.8 quantile) accuracy : 1.0
+3. Average confidence (0.5 quantile) accuracy : 1.0
+4. Above worst confidence (0.2 quantile) accuracy : 0.767
+5. Subset acc/conf : 0.989
+6. Full dataset acc/conf : 0.984
+7. Confidence weighted accuracy : 0.732
+8. Training time : 1385.649
+9. Nr Epochs : 802
+
+---------------------------
+
+Model: M
+Degree: 6
+Mode: linear
+Dataset: a)
+Accuracy score of 97.54%
+
+---------------------------
+
+1. Accuracy : 0.951
+2. High confidence (0.8 quantile) accuracy : None
+3. Average confidence (0.5 quantile) accuracy : None
+4. Above worst confidence (0.2 quantile) accuracy : None
+5. Subset acc/conf : None
+6. Full dataset acc/conf : None
+7. Confidence weighted accuracy : 0.951
+8. Training time : 611.009
+9. Nr Epochs : 582
+
+---------------------------
+
+Model: M
+Degree: 6
+Mode: linear
+Dataset: b)
+Accuracy score of 98.57%
+
+---------------------------
+
+1. Accuracy : 0.971
+2. High confidence (0.8 quantile) accuracy : None
+3. Average confidence (0.5 quantile) accuracy : None
+4. Above worst confidence (0.2 quantile) accuracy : None
+5. Subset acc/conf : None
+6. Full dataset acc/conf : None
+7. Confidence weighted accuracy : 0.971
+8. Training time : 145.346
+9. Nr Epochs : 138
+
+---------------------------
+
+Model: M
+Degree: 6
+Mode: linear
+Dataset: c)
+Accuracy score of 87.38%
+
+---------------------------
+
+1. Accuracy : 0.748
+2. High confidence (0.8 quantile) accuracy : None
+3. Average confidence (0.5 quantile) accuracy : None
+4. Above worst confidence (0.2 quantile) accuracy : None
+5. Subset acc/conf : None
+6. Full dataset acc/conf : None
+7. Confidence weighted accuracy : 0.748
+8. Training time : 653.989
+9. Nr Epochs : 619
+
+---------------------------
+
+Model: M+C
+Degree: 6
+Mode: linear
+Dataset: a)
+Accuracy score of 97.93%
+
+---------------------------
+
+1. Accuracy : 0.959
+2. High confidence (0.8 quantile) accuracy : 1.0
+3. Average confidence (0.5 quantile) accuracy : 1.0
+4. Above worst confidence (0.2 quantile) accuracy : 0.959
+5. Subset acc/conf : 1.037
+6. Full dataset acc/conf : 1.034
+7. Confidence weighted accuracy : 0.916
+8. Training time : 446.73
+9. Nr Epochs : 245
+
+---------------------------
+
+Model: M+C
+Degree: 6
+Mode: linear
+Dataset: b)
+Accuracy score of 98.7%
+
+---------------------------
+
+1. Accuracy : 0.974
+2. High confidence (0.8 quantile) accuracy : 1.0
+3. Average confidence (0.5 quantile) accuracy : 1.0
+4. Above worst confidence (0.2 quantile) accuracy : 0.974
+5. Subset acc/conf : 1.01
+6. Full dataset acc/conf : 1.011
+7. Confidence weighted accuracy : 0.958
+8. Training time : 325.717
+9. Nr Epochs : 182
+
+---------------------------
+
+Model: M+C
+Degree: 6
+Mode: linear
+Dataset: c)
+Accuracy score of 86.56%
+
+---------------------------
+
+1. Accuracy : 0.731
+2. High confidence (0.8 quantile) accuracy : 1.0
+3. Average confidence (0.5 quantile) accuracy : 0.998
+4. Above worst confidence (0.2 quantile) accuracy : 0.734
+5. Subset acc/conf : 1.024
+6. Full dataset acc/conf : 1.016
+7. Confidence weighted accuracy : 0.67
+8. Training time : 1441.665
+9. Nr Epochs : 744
+
+---------------------------
+
+Model: MC
+Degree: 6
+Mode: linear
+Dataset: a)
+Accuracy score of 98.15%
+
+---------------------------
+
+1. Accuracy : 0.963
+2. High confidence (0.8 quantile) accuracy : 1.0
+3. Average confidence (0.5 quantile) accuracy : 1.0
+4. Above worst confidence (0.2 quantile) accuracy : 0.963
+5. Subset acc/conf : 0.997
+6. Full dataset acc/conf : 0.999
+7. Confidence weighted accuracy : 0.955
+8. Training time : 683.985
+9. Nr Epochs : 304
+
+---------------------------
+
+Model: MC
+Degree: 6
+Mode: linear
+Dataset: b)
+Accuracy score of 98.96%
+
+---------------------------
+
+1. Accuracy : 0.979
+2. High confidence (0.8 quantile) accuracy : 1.0
+3. Average confidence (0.5 quantile) accuracy : 1.0
+4. Above worst confidence (0.2 quantile) accuracy : 0.979
+5. Subset acc/conf : 1.01
+6. Full dataset acc/conf : 1.009
+7. Confidence weighted accuracy : 0.968
+8. Training time : 427.564
+9. Nr Epochs : 187
+
+---------------------------
+
+Model: MC
+Degree: 6
+Mode: linear
+Dataset: c)
+Accuracy score of 86.37%
+
+---------------------------
+
+1. Accuracy : 0.727
+2. High confidence (0.8 quantile) accuracy : 1.0
+3. Average confidence (0.5 quantile) accuracy : 1.0
+4. Above worst confidence (0.2 quantile) accuracy : 0.729
+5. Subset acc/conf : 0.992
+6. Full dataset acc/conf : 0.999
+7. Confidence weighted accuracy : 0.682
+8. Training time : 1527.735
+9. Nr Epochs : 714
+
+---------------------------
+
+Model: Mprim
+Degree: 6
+Mode: linear
+Dataset: a)
+Accuracy score of 97.98%
+
+---------------------------
+
+1. Accuracy : 0.96
+2. High confidence (0.8 quantile) accuracy : 1.0
+3. Average confidence (0.5 quantile) accuracy : 1.0
+4. Above worst confidence (0.2 quantile) accuracy : 0.96
+5. Subset acc/conf : 0.969
+6. Full dataset acc/conf : 0.972
+7. Confidence weighted accuracy : 0.975
+8. Training time : 901.851
+9. Nr Epochs : 522
+
+---------------------------
+
+Model: Mprim
+Degree: 6
+Mode: linear
+Dataset: b)
+Accuracy score of 98.23%
+
+---------------------------
+
+1. Accuracy : 0.965
+2. High confidence (0.8 quantile) accuracy : 1.0
+3. Average confidence (0.5 quantile) accuracy : 1.0
+4. Above worst confidence (0.2 quantile) accuracy : 0.965
+5. Subset acc/conf : 0.985
+6. Full dataset acc/conf : 0.984
+7. Confidence weighted accuracy : 0.969
+8. Training time : 275.839
+9. Nr Epochs : 154
+
+---------------------------
+
+Model: Mprim
+Degree: 6
+Mode: linear
+Dataset: c)
+Accuracy score of 86.57%
+
+---------------------------
+
+1. Accuracy : 0.731
+2. High confidence (0.8 quantile) accuracy : 1.0
+3. Average confidence (0.5 quantile) accuracy : 1.0
+4. Above worst confidence (0.2 quantile) accuracy : 0.731
+5. Subset acc/conf : 0.96
+6. Full dataset acc/conf : 0.949
+7. Confidence weighted accuracy : 0.712
+8. Training time : 1034.209
+9. Nr Epochs : 599
+
+---------------------------
+
+Model: M
+Degree: 6
+Mode: polynomial
+Dataset: a)
+Accuracy score of 99.19%
+
+---------------------------
+
+1. Accuracy : 0.984
+2. High confidence (0.8 quantile) accuracy : None
+3. Average confidence (0.5 quantile) accuracy : None
+4. Above worst confidence (0.2 quantile) accuracy : None
+5. Subset acc/conf : None
+6. Full dataset acc/conf : None
+7. Confidence weighted accuracy : 0.984
+8. Training time : 2120.431
+9. Nr Epochs : 1974
+
+---------------------------
+
+Model: M
+Degree: 6
+Mode: polynomial
+Dataset: b)
+Accuracy score of 99.39%
+
+---------------------------
+
+1. Accuracy : 0.988
+2. High confidence (0.8 quantile) accuracy : None
+3. Average confidence (0.5 quantile) accuracy : None
+4. Above worst confidence (0.2 quantile) accuracy : None
+5. Subset acc/conf : None
+6. Full dataset acc/conf : None
+7. Confidence weighted accuracy : 0.988
+8. Training time : 73.683
+9. Nr Epochs : 65
+
+---------------------------
+
+Model: M
+Degree: 6
+Mode: polynomial
+Dataset: c)
+Accuracy score of 87.96%
+
+---------------------------
+
+1. Accuracy : 0.759
+2. High confidence (0.8 quantile) accuracy : None
+3. Average confidence (0.5 quantile) accuracy : None
+4. Above worst confidence (0.2 quantile) accuracy : None
+5. Subset acc/conf : None
+6. Full dataset acc/conf : None
+7. Confidence weighted accuracy : 0.759
+8. Training time : 997.215
+9. Nr Epochs : 861
+
+---------------------------
+
+Model: M+C
+Degree: 6
+Mode: polynomial
+Dataset: a)
+Accuracy score of 99.24%
+
+---------------------------
+
+1. Accuracy : 0.985
+2. High confidence (0.8 quantile) accuracy : 1.0
+3. Average confidence (0.5 quantile) accuracy : 1.0
+4. Above worst confidence (0.2 quantile) accuracy : 0.985
+5. Subset acc/conf : 0.998
+6. Full dataset acc/conf : 0.995
+7. Confidence weighted accuracy : 0.984
+8. Training time : 417.125
+9. Nr Epochs : 189
+
+---------------------------
+
+Model: M+C
+Degree: 6
+Mode: polynomial
+Dataset: b)
+Accuracy score of 99.41%
+
+---------------------------
+
+1. Accuracy : 0.988
+2. High confidence (0.8 quantile) accuracy : 1.0
+3. Average confidence (0.5 quantile) accuracy : 1.0
+4. Above worst confidence (0.2 quantile) accuracy : 0.988
+5. Subset acc/conf : 1.0
+6. Full dataset acc/conf : 0.999
+7. Confidence weighted accuracy : 0.985
+8. Training time : 169.671
+9. Nr Epochs : 74
+
+---------------------------
+
+Model: M+C
+Degree: 6
+Mode: polynomial
+Dataset: c)
+Accuracy score of 88.09%
+
+---------------------------
+
+1. Accuracy : 0.762
+2. High confidence (0.8 quantile) accuracy : 1.0
+3. Average confidence (0.5 quantile) accuracy : 1.0
+4. Above worst confidence (0.2 quantile) accuracy : 0.762
+5. Subset acc/conf : 1.022
+6. Full dataset acc/conf : 1.015
+7. Confidence weighted accuracy : 0.705
+8. Training time : 2267.218
+9. Nr Epochs : 1123
+
+---------------------------
+
+Model: MC
+Degree: 6
+Mode: polynomial
+Dataset: a)
+Accuracy score of 99.27%
+
+---------------------------
+
+1. Accuracy : 0.985
+2. High confidence (0.8 quantile) accuracy : 1.0
+3. Average confidence (0.5 quantile) accuracy : 1.0
+4. Above worst confidence (0.2 quantile) accuracy : 0.985
+5. Subset acc/conf : 0.984
+6. Full dataset acc/conf : 0.986
+7. Confidence weighted accuracy : 0.995
+8. Training time : 375.118
+9. Nr Epochs : 176
+
+---------------------------
+
+Model: MC
+Degree: 6
+Mode: polynomial
+Dataset: b)
+Accuracy score of 99.23%
+
+---------------------------
+
+1. Accuracy : 0.985
+2. High confidence (0.8 quantile) accuracy : 1.0
+3. Average confidence (0.5 quantile) accuracy : 1.0
+4. Above worst confidence (0.2 quantile) accuracy : 0.985
+5. Subset acc/conf : 1.002
+6. Full dataset acc/conf : 1.0
+7. Confidence weighted accuracy : 0.98
+8. Training time : 146.128
+9. Nr Epochs : 70
+
+---------------------------
+
+Model: MC
+Degree: 6
+Mode: polynomial
+Dataset: c)
+Accuracy score of 88.48%
+
+---------------------------
+
+1. Accuracy : 0.77
+2. High confidence (0.8 quantile) accuracy : 1.0
+3. Average confidence (0.5 quantile) accuracy : 1.0
+4. Above worst confidence (0.2 quantile) accuracy : 0.77
+5. Subset acc/conf : 1.007
+6. Full dataset acc/conf : 1.013
+7. Confidence weighted accuracy : 0.723
+8. Training time : 2266.476
+9. Nr Epochs : 1060
+
+---------------------------
+
+Model: Mprim
+Degree: 6
+Mode: polynomial
+Dataset: a)
+Accuracy score of 99.24%
+
+---------------------------
+
+1. Accuracy : 0.985
+2. High confidence (0.8 quantile) accuracy : 0.999
+3. Average confidence (0.5 quantile) accuracy : 0.999
+4. Above worst confidence (0.2 quantile) accuracy : 0.985
+5. Subset acc/conf : 0.996
+6. Full dataset acc/conf : 0.996
+7. Confidence weighted accuracy : 0.983
+8. Training time : 5593.206
+9. Nr Epochs : 3000
+
+---------------------------
+
+Model: Mprim
+Degree: 6
+Mode: polynomial
+Dataset: b)
+Accuracy score of 99.16%
+
+---------------------------
+
+1. Accuracy : 0.983
+2. High confidence (0.8 quantile) accuracy : 0.999
+3. Average confidence (0.5 quantile) accuracy : 1.0
+4. Above worst confidence (0.2 quantile) accuracy : 0.983
+5. Subset acc/conf : 1.011
+6. Full dataset acc/conf : 1.012
+7. Confidence weighted accuracy : 0.965
+8. Training time : 84.675
+9. Nr Epochs : 48
+
+---------------------------
+
+Model: Mprim
+Degree: 6
+Mode: polynomial
+Dataset: c)
+Accuracy score of 88.1%
+
+---------------------------
+
+1. Accuracy : 0.762
+2. High confidence (0.8 quantile) accuracy : 0.998
+3. Average confidence (0.5 quantile) accuracy : 0.996
+4. Above worst confidence (0.2 quantile) accuracy : 0.762
+5. Subset acc/conf : 0.985
+6. Full dataset acc/conf : 0.979
+7. Confidence weighted accuracy : 0.736
+8. Training time : 1406.221
+9. Nr Epochs : 796
+
+---------------------------
+

@@ -51,14 +51,14 @@ for dataset in model_perf_map:
         for model in v:
             val = v[model]/model_perf_cnt_map[dataset][k][model]
             print(f'{model} - {val}')
-exit()
+#exit()
 
 data = json.load(open('results/Results_6_batch2.json','r'))
 
 dataset_arr = ['a','b','c']
 model_arr = ['M+C','MC','Mprim','M']
 mode = 'relative'
-mode = 'absolute'
+#mode = 'absolute'
 
 plt.rcParams["figure.figsize"] = (10,10)
 for metric in data['6']['polynomial_w_coef']['M']['a'].keys():

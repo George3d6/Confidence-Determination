@@ -312,7 +312,7 @@ Let's also take a look at the relative plots:
 <a><img src="https://raw.githubusercontent.com/George3d6/Confidence-Determination/master/img/9._Nr_Epochs_relative_.png" width="400"/></a>
 
 
-## II Trying to squeeze more out of the results
+## III A broader look at the results
 
 Ok, before I draw any conclusion I also want to do a brief analysis of all the datapoints I collected. Maybe there's some more signal in all that noise.
 
@@ -364,7 +364,7 @@ Finally, when looking at the confidence weighted accuracy, all 3 confidence mode
 
 **However** `M`'s accuracy results on datasets of type c were really bad, when we compare the confidence weighted accuracy to the plain accuracy of e.g. `MC`, `M+C` and `Mprim` the confidence weighted accuracy is still slightly bellow the raw accuracy.
 
-## 7. Conclusions
+## IV Conclusions
 
 To recapitulate, we've tried various datasets that use a multiple-parameter equation to model a 3-way categorial label in order to test various ways of estimating prediction confidence using fully connected networks.
 
@@ -385,7 +385,7 @@ For `MC` and `M+C`, the average confidence matched the average accuracy with a <
 
 This is enough to motivate me to do a bit more digging, potentially using more rigorous epxeriments and more complex datasets on the idea of having a separate confidence-predicting network. Both the `MC` and `M+C` approach seem to be viable candidates here. Outputting a confidence from the same model seems to show worst performance than a separate confidence network.
 
-## 8. Experimental errors
+## V Experimental errors
 
 * Datasets were no varied enough.
 * The normal model `M` should have obtained accuracies of ~100% on datasets of type `a` and `b` and ~88% on datasets of type `c`. The acuracies were never quite that high, maybe a completely different result would have been obtained on `c` has `M` learned how to predict it as close to reality as possibe. However, this behaviour would have negated the experimental value for datasets of type `a` and `b`.
@@ -397,4 +397,4 @@ This is enough to motivate me to do a bit more digging, potentially using more r
 * The terms of the experiments were slightly altered once I realized I wanted to measure more metrics than I had originally planned.
 * There are a few anomalies caused by no value being present in the 0.8th quantile of confidence, pressumably I should have used a `>=` rather than `>` operator, but now it's too late.
 
-On the whole, if people find this interesting I might run a more thorough experiment taking into account the above points. That being said, I don't think these "errors" affect the conclusion too much.
+On the whole, if people find this interesting I might run a more thorough experiment taking into account the above points. That being said, it doesn't seem like these "errors" should affect the data relevant for the conclusion too much, though they might be affecting the things presented in section III quite a lot.

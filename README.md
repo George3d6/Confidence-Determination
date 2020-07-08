@@ -1,68 +1,72 @@
-# On confidence determination
+# The roles of confidence in machine learning
 
-## 1. What is confidence
+## I - What is confidence
 
-I'm somewhat partial towards the skeptic philosophical tradition, that means I ascribe to the idea that one can't be truly confident about anything.
+I'm partial towards the skeptic philosophical tradition, which means I ascribe to the idea that one can't be truly confident about anything, among those is the definition of "confidence".
 
-The definition of "confidence" is among those things I'm not very confident about.
-
-The commonly accepted definition for confidence, by which I mean the first line of text that pops up when I google "confidence", is:
+I've researched the commonly accepted layman definition for confidence (the first line of text that pops up when I google "confidence"):
 
 > The feeling or belief that one can have faith in or rely on someone or something
 
-This is not very helpful, you know that a concept is fuzzy when "feeling", "faith" and "belief" must all be used to describe it, all that's missing to make the complete list of hand wavy terms we use to describe something we don't understand is: quantum, consciousness and intuition.
+You know that a concept is fuzzy when "feeling" is used to describe it. But this one has "feeling", "faith" and "belief" in a single sentence. The only words missing to get into the top 5 most unrigorous sentences are "quantum", "consciousness", and "intuition".
 
-In an ideal world where I can measure the outcome of an infinity of binary events I can define ideal confidence as:
+What about a more formal definition?
 
-> The probability of an event coming true, such that given an infinite number of potential events, each with a confidence from 0 to 1 assigned to them, the mean of the confidences will be equal to the fraction of events that came true.
+In an ideal world where I can measure the outcome of infinite binary events I can say:
 
-But I'm pretty sure that this ideal world contains an ideal analytic philosopher with a panache for set theory that would have some complaint about my use of infinity which breaks even that definition.
+* Confidence is the probability of an event coming true, such that given an infinite number of potential events, each with a confidence from 0 to 1 assigned to them, the mean of the confidences will be equal to the fraction of events that came true.
 
-I'm fairly sure there is a horrible middle ground between these two definition that relies on the well known fact that [everything in the world is a normal distribution](https://blog.cerebralab.com/Named_Distributions_as_Artifacts) and is thus able to give a definition that is more complex and equaly impractical.
+But I'm pretty sure that this ideal world contains an ideal analytic philosopher with a panache for set-theory that would have some complaint about my use of infinity.
 
-At any rate, we don't live in an ideal world and I don't need an ideal confidence. I just need a number that goes from 0 to 1, describing the approximate probability of something being true, such that if the number is 0.(9) and the thing coming true is "This pill will not kill you", I can confidently swallow that pill every day of the year without giving it much thought... or something like that.
+I'm fairly sure there is a horrible middle ground between these two definitions that relies on the well-known fact that [everything in the world is a variation of the normal distribution](https://blog.cerebralab.com/Named_Distributions_as_Artifacts) and is thus able to give a definition that is more mathematically complex and equally impractical.
 
-Even more generally, confidence should be a value that allows me to pick a subset of predictions with average confidence `x` and be fairly certain that the average accuracy of those predictions will be about equal to `x`.
+At any rate, we don't live in an ideal world and I don't need an ideal confidence. I just need a number that goes from 0 to 1, describing the approximate probability of something being true, such that if the number is 0.9999...9 I can gamble my life on the thing being true.
 
-But, the exact definition I want for my confidence depends on the problem I'm using it to solve.
+More pragmatically, confidence should be a value that allows me to pick a subset of predictions with average confidence `x` and be fairly certain that the average accuracy of those predictions will be around `x`.
 
-## 2. The role of confidence in Machine Learning
+However, I think the exact definition I want for my confidence depends on the problem I'm solving.
 
-Does confidence have any role to play in machine learning ?
+Speaking of which...
 
-Are confidence determination models useful ? If so, how and why ?
+## II - The role of confidence in Machine Learning
 
-Is confidence a useful tool in our ontology at all or should we eat it up inside some other more useful concept ?
+Does confidence have any role to play in machine learning?
 
-I think confidence as defined above can be though of as playing several roles.
+Are confidence determination models useful? If so, how and why?
 
-### a) A value by which we weight our predictions *(without modifying the model)*.
+Is confidence a useful tool in our ontology at all or should we eat it up inside some other more useful concept?
 
-Suppose we have a unfiorm target with 3 values: A, B, C. In the case of B and C the "cost" of a false positive is equal to the cost of a true positive, however the "cost" of classifying something as A incorrectly is so great that it's equal to the benefit of x10 correct classifications of A. There's two ways to go about solving this issue:
+I think confidence as defined above can be thought of as playing several roles.
 
-* Negatively weighting A during training. For example using a criterion with 10+epsilon greater penalty for miss-classifying something as A then for classifying A as something else.
-* Obtaining a confidence value for our prediction, only trust predictions A above a certain confidence.
+### 1. A value by which we weight our predictions
 
-Once we have a confidence (c), we can rephrase each prediction of A as: `A = Pred_A | c > c_lim , null | c <= c_lim`, where `c_lim=0.9`. Thus for every A we predict we can be assured that the cost function we are maximizing for is > 1.
+Suppose we have a uniform target with 3 values: A, B, C. In the case of B and C the "cost" of a false positive is equal to the cost of a true positive, however, the "cost" of classifying something as A incorrectly is so great that it's equal to the benefit of 3 correct classifications of A. There are two ways to go about solving this issue:
 
-Even if the confidence doesn't translate into real world probabilities (due to training data scarcity, imperfect models and overfitting), we can still obtain a sample (`C`) of all confidences on the validation dataset and define `c_lim` such that `P(True|Pred_A) > 0.9 | (A | C > c_lim )`.
+* Negatively weighting `A` during training. For example, using a criterion with 3+epsilon greater penalty for miss-classifying something as `A` than for classifying `A` as something else.
+* Obtaining a confidence value for our prediction, only trust predictions of `A` with a confidence above 75%.
 
-Even if our validation dataset is too small to trust this approach we can defensively set `c_lim` higher than the value determine on the validation set.
+Once we have a confidence (c), we can rephrase each prediction of A as: `A = Pred_A | c > c_lim , null | c <= c_lim`, where `c_lim=3/4`. Thus for every `A` we predict we can be assured that the cost function we are maximizing for is > 1.
 
-The confidence based approach seems superior since:
+Even if the confidence doesn't translate into real-world probabilities (due to training data scarcity, imperfect models and overfitting), we can still obtain a sample (`C`) of all confidences on the validation dataset and define `c_lim` such that `P(True|Pred_A) > 3/4 | (A | C > c_lim )`.
 
-* It doesn't bias the model based on some external cost function that might later change. Given a change in the TP/FP cost balance for A we can reflect this in our predictions by just tweaking `c_lim`.
-* It allow to quick tweaking if production data doesn't match behavior on validation data. Given that our decided upon `c_lim` yield accuracy < 0.9 on the production data we can try and increase is until we get a desired accuracy without retraining the whole model.
-* It allows us to predict unknowns. If we bias the loss function we are still misclassifying A as B or C in order to avoid the large cost of a FP for A. In the confidence case, if our confidence is too small we can instead just say "I think this is likely and A but I'm not confident enough for it to be worth treating as such".
+Even if our validation dataset is too small to trust this approach we can defensively set `c_lim` higher than the value determined on the validation set.
+
+The confidence-based approach seems superior since:
+
+* It doesn't bias the model based on some external cost function that might later change. Given a change in the TP/FP cost balance for A, we can reflect this in our predictions by just tweaking `c_lim`.
+* It allows to quick tweaking if production data doesn't match behavior on validation data. Given that our decided upon `c_lim` yield accuracy < 0.75 on the production data we can try and increase `c_lim` until we get the desired accuracy (without retraining the whole model).
+* It allows us to predict unknowns. If we bias the loss function we are still misclassifying A as B or C to avoid the large cost of a FP for A. In the confidence case, if our confidence is too small we can instead just say "I think this is likely an A but I'm not confident enough for it to be worth treating as such".
 
 
-### b) A value that can increase accuracy on a task where we can refuse to make some predictions
+### 2. A value that can increase accuracy on a task where we can refuse to make some predictions
 
 A quick and dirty example here is obviously the stock market. We have a model that predicts `Y` as the change in a stock's price in the next 15 minutes, for any given stock every 15 minutes. We might be making ~8000 predictions with our model, but we only need 2-3 correct predictions coupled with no false predictions to achieve our goal (get silly rich). In this hypothetical we can take only e.g. `Y | c > 0.8`. Thus turning even a bad model into a potentially great model assuming that said model is capable of making a few good predictions and our confidence determination is on point.
 
-*Conversely, not many people can do this, so based on this particular example I think it's fair to speculate something like: "The kind of data that yield very imperfect models are likely to also yield very imperfect confidence determination algorithms and/or have no edge cases where the confidence can be rightfully determined as very high". This is a speculation, not a mathematical or otherwise rigorous stipulation.*
+*Conversely, not many people can do this, so based on this particular example I think it's fair to speculate something like: "The kind of data that yield very imperfect models are likely to also yield very imperfect confidence determination algorithms and/or have no edge cases where the confidence can be rightfully determined as very high". *
 
-To formalize this a bit more we can define the following "cost function" for deploying our algorithm into production:
+But this is a speculation, not a mathematical or otherwise rigorous stipulation, not even a good syllogism.
+
+To formalize this a bit more, we can define the following "cost function" for deploying our algorithm into production:
 
 `cost = prediction_error*inverse_log_func(pct_predictions_made)`
 
@@ -79,18 +83,21 @@ Let's compute the cost using `inverse_log_func=1/ln(1+100n)`:
 
 In a case like this a confidence determination mechanism and increase the overall performance of a model without needing to improve the model itself, potentially even in a case where we can find "no way" of improving the model.
 
-This is more or less a generalization of case 1, but I think it's useful to keep both of them in mind since the first one i
-Looking at this generic example this seems fairly promising, since we can basically say "a confidence determination that's better than the overall accuracy score can improve a model past the point where it's overall usefulness scales better with increased accuracy than with the number of predictions it can make".s easier to conceptualize and builds up to this one.
+This is more or less a generalization of case 1, but I think it's useful to keep both of them in mind.
 
-### c) A value or mechanism for training and choosing model
+Looking at this generic example confidence seems fairly promising, it allows us to say:
 
-Supposed we have several models that can make predictions as an ensemble and on their one they have about equal accuracy, or suppose that we want to pick between several models that all obtain around the same accuracy when cross validated on the relevant data.
+> A confidence determination that's better than the overall accuracy score can improve a model past the point where it's overall usefulness scales better with increased accuracy than with the number of predictions it can makes
+
+### 3. A value or mechanism for training and choosing a model
+
+Supposed we have several models that can make predictions as an ensemble and on their one they have about equal accuracy or suppose that we want to pick between several models that all obtain around the same accuracy when cross-validated on the relevant data.
 
 In the first case, we basically have to weight each model in the ensemble by 1/n, in the second case, we have to pick a model at random.
 
 But suppose that we instead have a separate confidence model trained alongside each model.
 
-In the ensemble case, training this confidence model along side our normal models can yield a confidence that a given model in the ensemble is making a correct prediction. Assume a situation with `n` labels and `n` model for which `Mx` is 0.9 good at predicting `x` when it appears and and `1/n` accurate at predicting any other label, all other model are `1/n` good at predicting all other labels.
+In the ensemble case, training this confidence model alongside our normal models can yield a confidence that a given model in the ensemble is making a correct prediction. Assume a situation with `n` labels and `n` model for which `Mx` is 0.9 good at predicting `x` when it appears and and `1/n` accurate at predicting any other label, all other models are `1/n` good at predicting all other labels.
 
 Normally, this model would be close to random, however, provided that our confidence is 100% correct our formula for picking a prediction for when `Mx` predicts `x` becomes:
 
@@ -101,11 +108,11 @@ Normally, this model would be close to random, however, provided that our confid
 
 Which basically means that for `1 < n < 11` we are guaranteed to get 90% accuracy for predicting `x` and the accuracy stays better than random for bigger `n`s (though surprisingly enough the computations for this case aren't very easy)
 
-Obviously this is a made up case, assuming ensemble models predict randomly defeats the point of an ensemble, but going from `P(correct|X)=1/n` to `P(correct|X)=0.9` is a fairly huge leap by just adding a confidence value. I'm fairly sure this still holds if `P((correct|x)|Pred(Mx)=x)=0.9 for any Mx for x in (1..n)`, but the proof is a bit harder here. However, in this case, the behavior would be closer to what we would expect from a "real" ensemble model.
+Obviously, this is a made-up case, assuming ensemble models predict randomly defeats the point of an ensemble, but going from `P(correct|X)=1/n` to `P(correct|X)=0.9` is a fairly huge leap by just adding a confidence value. I'm fairly sure this still holds if `P((correct|x)|Pred(Mx)=x)=0.9 for any Mx for x in (1..n)`, but the proof is a bit harder here. However, in this case, the behavior would be closer to what we would expect from a "real" ensemble model.
 
-The second case is a bit trickier, but we can assume a sort of "overfitting" when we pick the model out of a multitude. Assume we have a training methodology that draw out a "best candidate" on some validation set that we are constantly evaluation models on during training. Do this enough time and you end up overfitting the validation set.
+The second case is a bit trickier, but we can assume a sort of "overfitting" when we pick the model out of a multitude. Assume we have a training methodology that draws out a "best candidate" on some validation set that we are constantly evaluating models on during training. Do this enough time and you end up overfitting the validation set.
 
-However, assume that instead of evaluating the accuracy on the validation set we also evaluate the confidence. Given that confidence and accuracy are independently determined, the chance of both overfitting a validation set at the same time is `1/n` where `n` is the number of checks we run against out validation set.
+However, assume that instead of evaluating the accuracy on the validation set we also evaluate the confidence. Given that confidence and accuracy are independently determined, the chance of both overfitting a validation set at the same time is `1/n` where `n` is the number of checks we run against our validation set.
 
 Thus, if instead of our model picking methodology being "best model on the validation set" it becomes "best model with top 80th percentile accuracy and 80th percentile confidence on the validation set". At least on an intuitive level, this seems like it could prevent overfitting on the validation data.
 
@@ -118,15 +125,15 @@ From the above I can summarize that a confidence value can help us:
 1. Select a subset of predictions with higher accuracies under various scenarios
 2. Modify the behavior of our predictive models both during training and during inference
 
-But a lot of things to do (2) and (1) seems like something that could be inherent in our very models and thus needn't require a complex confidence determination mechanism. Some examples of (1) are: determining categorical certainty by looking at the non-max values in the one hot output vector, using a quantile loss to determine a confidence range instead of an exact value for numerical predictions, predicting linear instead of binary values in order to determine likelihoods for the outcome predicted.
+But a lot of things to do (2) and (1) seems like something that could be inherent in our very models and thus needn't require a complex confidence determination mechanism. Some examples of (1) are: determining categorical certainty by looking at the non-max values in the one-hot output vector, using a quantile loss to determine a confidence range instead of an exact value for numerical predictions, predicting linear instead of binary values in order to determine likelihoods for the outcome predicted.
 
-## 3. A detour into confidence and explainability
+## III A detour into confidence and explainability
 
-I'd argue that a confidence determination mechanism can be interesting based on the inputs we feed into it, there's 3 different things that can determine confidence.
+I'd argue that a confidence determination mechanism can be interesting based on the inputs we feed into it, 3 different things can determine confidence.
 
-First let's define a few terms, we have inputs (`X`), outputs (`Y`), which for the sake of argument we can just treat as a label for each input sample. We have a machine learning model (`M`) trying to infer a relationship between the two, the predictions of which we will denoted `Yh`
+First, let's define a few terms, we have inputs (`X`), outputs (`Y`), which for the sake of argument we can just treat as a label for each input sample. We have a machine learning model (`M`) trying to infer a relationship between the two, the predictions of which we will denote `Yh`
 
-As such, after a prediction is made, confidence can be determine based on the values of 3 entities `X`,`Yh` and `M`.
+As such, after a prediction is made, confidence can be determined based on the values of 3 entities `X`,`Yh`, and `M`.
 
 Let me give some intuitive examples of how these 3 things can be used to infer confidence:
 
@@ -136,26 +143,28 @@ We can also look at `Y` and say something like: "Oh, `M` is usually accurate, bu
 
 We can also look at `M` itself and say something like: "Oh, the model's activations usually match these clusters of patterns, but the current activations look like outliers, this behavior is very different from what we've previously seen so let's assign a low confidence".
 
-Granted, both `Y` and `M` stem from `X`, but independently analyzing them might lead to results which are easier to act upon. I.e. "This one pixel on the dog image looks kinda weird" is less useful to say than "The n-th layer of your model has unusually high activations due to this random pixel". Both statements are hard to act upon, but at least there's some chance of being able to make meaningful change based on  the second (e.g. use some kind of regularization to normalize whatever is happening in the n-th layer).
+Granted, both `Y` and `M` stem from `X`, but independently analyzing them might lead to results that are easier to act upon:
+
+"This one pixel on the dog image looks kinda weird" is less useful to say than "The n-th layer of your model has unusually high activations due to this random pixel". Both statements are hard to act upon, but at least there's some chance of being able to make meaningful change based on the second (e.g. use some kind of regularization to normalize whatever is happening in the n-th layer).
 
 This is all fine and dandy except that, well, there's no way to know which of the two things are "easier to act upon" in a given scenario, outside of contrived examples.
 
-Thus, even though confidence *might* play a role in exaplinability, but the confidence determination mechanism would have to be designed with an explainability component in order for this to happen. It's not obvious that this is easier than just designing `M` itself with exaplinability capabilities built-in. However (see above), I'd tend to think that in most cases, if a confidence model can converge well on a problem, so can a predictive model, thus the confidence/explainability components lose a lot of their usefulness.
+Thus, even though confidence *might* play a role in explainability, but the confidence determination mechanism would have to be designed with an explainability component in order for this to happen. It's not obvious that this is easier than just designing `M` itself with explainability capabilities built-in. However (see above), I'd tend to think that in most cases, if a confidence model can converge well on a problem, so can a predictive model, thus the confidence/explainability components lose a lot of their usefulness.
 
 
-## 4. Confidence and training
+## IV Confidence and training
 
 A more interesting role of confidence determining models would be for then to serve as secondary cost generators for our models.
 
-Does this seem silly, unintuitive or counter-productive ? Well, consider this:
+Does this seem silly, unintuitive, or counter-productive? Well, consider this:
 
-Take `M` and a confidence determining model `C` that takes `Yh` and produces a confidence `Yc`. We'll train `M` by using some function that incorporates both `M`'s own loss function and the costs propagated from the input layer of `C` (in which we input `Yh`).
+Take `M` and a confidence determining model `C` that takes `Yh` and produces a confidence `Yc`. We'll train `M` by using some function that incorporates both `M`'s loss function and the costs propagated from the input layer of `C` (in which we input `Yh`).
 
 `C` is trained to generate a confidence value, let's just say `C` is trying to a number from 0 to 1 equal to the numerical value of `Yh == Y` (0 for false and 1 for true).
 
 Sounds a bit strange, but let me propose a different scenario:
 
-What if `C` were to just be discriminating between it's inputs being `Yh` and it's inputs being `Y`, i.e. trying to discriminate between true labels and labels inferred by `M`.
+What if `C` were to just be discriminating between its inputs being `Yh` and it's inputs being `Y`, i.e. trying to discriminate between true labels and labels inferred by `M`.
 
 Then, we could backpropagate the cost of this binary decision through `C` and into the output layer of `M`.
 
@@ -165,18 +174,23 @@ In addition to that, unlike GANs, we have the option of feeding the activation o
 
 The advantage this has over GANs is that `C` is not working *against* `M`, it's just trying to predict it's behavior. Minimizing the loss for `C` (having it be better able to predict if `Yh == Y`) will not necessarily negatively affect `M`'s performance.
 
-With GANs there is a risk of `G` being actually good, but just facing off against a very well trained `D` that pays close attention to minute features that can't be perfectly replicated by `G` given such a large SNR in the loss function. However, with this approach, there's little incentive for `C` to behave in ways that increase the loss of `M`.
+With GANs there is a risk of `G` being sufficiently good, but just facing off against a very well trained `D` that pays close attention to minute features that can't be perfectly replicated by `G` given such a large SNR in the loss function. However, with this approach, there's little incentive for `C` to behave in ways that increase the loss of `M`.
 
 On the whole, this is rather promising contextual evidence and good directions to start digging further into this topic with some experimenting.
 
+# Experiments with confidence determining networks
 
-## 5. Experimental setup
+## I Experimental setup
+
+All the code and data can be found here: https://github.com/George3d6/Confidence-Determination
+
+If you want to but are unable to replicate some of this let me know. Everything random should be statically seeded so unless something went wrong you'd get the exact same numbers I did.
+
+***
 
 In order to ruminate on the idea of confidence determination I will do the following experiment:
 
 Take a fully connected network (`M`) and train it on 4 datasets:
-
-***
 
 The first dataset (a) is a fully deterministic dataset dictated by some n-th degree polynomial function:
 
@@ -253,21 +267,21 @@ Barring issues with training time I will use the 6th degree polynomial with coef
 
 Though, I might use the other examples to point out interesting behavior. This is not set in stone, but I think it's good to lay this out beforehand as to not be tempted to hack my experiment in order to generate nicer looking results, I already have way too many measures to cherry pick an effect out of anyway.
 
-## 6. The results
+## II The results
 
 A few days later, I have some results:
 
 Here they are (for the 6th degree polynomial with coefficients dataset):
 
-<a><img src="img/1._Accuracy_absolute_.png" width="400"/></a>
-<a><img src="img/2._High_confidence_%280.8_quantile%29_accuracy_absolute_.png" width="400"/></a>
-<a><img src="img/3._Average_confidence_%280.5_quantile%29_accuracy_absolute_.png" width="400"/></a>
-<a><img src="img/4._Above_worst_confidence_%280.2_quantile%29_accuracy_absolute_.png" width="400"/></a>
-<a><img src="img/5._Subset_acc_over_conf_absolute_.png" width="400"/></a>
-<a><img src="img/6._Full_dataset_acc_over_conf_absolute_.png" width="400"/></a>
-<a><img src="img/7._Confidence_weighted_accuracy_absolute_.png" width="400"/></a>
-<a><img src="img/8._Training_time_absolute_.png" width="400"/></a>
-<a><img src="img/9._Nr_Epochs_absolute_.png" width="400"/></a>
+<a><img src="https://raw.githubusercontent.com/George3d6/Confidence-Determination/master/img/1._Accuracy_absolute_.png" width="400"/></a>
+<a><img src="https://raw.githubusercontent.com/George3d6/Confidence-Determination/master/img/2._High_confidence_%280.8_quantile%29_accuracy_absolute_.png" width="400"/></a>
+<a><img src="https://raw.githubusercontent.com/George3d6/Confidence-Determination/master/img/3._Average_confidence_%280.5_quantile%29_accuracy_absolute_.png" width="400"/></a>
+<a><img src="https://raw.githubusercontent.com/George3d6/Confidence-Determination/master/img/4._Above_worst_confidence_%280.2_quantile%29_accuracy_absolute_.png" width="400"/></a>
+<a><img src="https://raw.githubusercontent.com/George3d6/Confidence-Determination/master/img/5._Subset_acc_over_conf_absolute_.png" width="400"/></a>
+<a><img src="https://raw.githubusercontent.com/George3d6/Confidence-Determination/master/img/6._Full_dataset_acc_over_conf_absolute_.png" width="400"/></a>
+<a><img src="https://raw.githubusercontent.com/George3d6/Confidence-Determination/master/img/7._Confidence_weighted_accuracy_absolute_.png" width="400"/></a>
+<a><img src="https://raw.githubusercontent.com/George3d6/Confidence-Determination/master/img/8._Training_time_absolute_.png" width="400"/></a>
+<a><img src="https://raw.githubusercontent.com/George3d6/Confidence-Determination/master/img/9._Nr_Epochs_absolute_.png" width="400"/></a>
 
 Let's explore these one by one:
 
@@ -287,18 +301,18 @@ Finally, the training time and number of epochs is unexpected, I'd have assumed 
 
 Let's also take a look at the relative plots:
 
-<a><img src="img/1._Accuracy_relative_.png" width="400"/></a>
-<a><img src="img/2._High_confidence_%280.8_quantile%29_accuracy_relative_.png" width="400"/></a>
-<a><img src="img/3._Average_confidence_%280.5_quantile%29_accuracy_relative_.png" width="400"/></a>
-<a><img src="img/4._Above_worst_confidence_%280.2_quantile%29_accuracy_relative_.png" width="400"/></a>
-<a><img src="img/5._Subset_acc_over_conf_relative_.png" width="400"/></a>
-<a><img src="img/6._Full_dataset_acc_over_conf_relative_.png" width="400"/></a>
-<a><img src="img/7._Confidence_weighted_accuracy_relative_.png" width="400"/></a>
-<a><img src="img/8._Training_time_relative_.png" width="400"/></a>
-<a><img src="img/9._Nr_Epochs_relative_.png" width="400"/></a>
+<a><img src="https://raw.githubusercontent.com/George3d6/Confidence-Determination/master/img/1._Accuracy_relative_.png" width="400"/></a>
+<a><img src="https://raw.githubusercontent.com/George3d6/Confidence-Determination/master/img/2._High_confidence_%280.8_quantile%29_accuracy_relative_.png" width="400"/></a>
+<a><img src="https://raw.githubusercontent.com/George3d6/Confidence-Determination/master/img/3._Average_confidence_%280.5_quantile%29_accuracy_relative_.png" width="400"/></a>
+<a><img src="https://raw.githubusercontent.com/George3d6/Confidence-Determination/master/img/4._Above_worst_confidence_%280.2_quantile%29_accuracy_relative_.png" width="400"/></a>
+<a><img src="https://raw.githubusercontent.com/George3d6/Confidence-Determination/master/img/5._Subset_acc_over_conf_relative_.png" width="400"/></a>
+<a><img src="https://raw.githubusercontent.com/George3d6/Confidence-Determination/master/img/6._Full_dataset_acc_over_conf_relative_.png" width="400"/></a>
+<a><img src="https://raw.githubusercontent.com/George3d6/Confidence-Determination/master/img/7._Confidence_weighted_accuracy_relative_.png" width="400"/></a>
+<a><img src="https://raw.githubusercontent.com/George3d6/Confidence-Determination/master/img/8._Training_time_relative_.png" width="400"/></a>
+<a><img src="https://raw.githubusercontent.com/George3d6/Confidence-Determination/master/img/9._Nr_Epochs_relative_.png" width="400"/></a>
 
 
-***
+## II Trying to squeeze more out of the results
 
 Ok, before I draw any conclusion I also want to do a brief analysis of all the datapoints I collected. Maybe there's some more signal in all that noise.
 
